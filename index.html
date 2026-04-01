@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbat-Ol | Vaqtingizni qadrlang</title>
+    <meta name="description" content="Online navbat olish tizimi. Stomatologiya, sartaroshxona va boshqa xizmatlar uchun navbatingizni masofadan band qiling.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .apple-gradient { background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%); }
+        .btn-apple { transition: all 0.3s ease; }
+        .btn-apple:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="apple-gradient text-gray-900" x-data="localizer()">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tight">Navbat<span class="text-blue-600">-Ol</span></div>
+            
+            <div class="flex items-center space-x-4">
+                <select x-model="lang" class="bg-transparent border-none text-sm font-medium focus:ring-0 cursor-pointer">
+                    <option value="uz">O'zbek</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <a href="#download" class="hidden md:block bg-black text-white px-5 py-2 rounded-full text-sm btn-apple" x-text="t[lang].downloadBtn"></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6" x-text="t[lang].heroTitle"></h1>
+            <p class="text-xl md:text-2xl text-gray-500 mb-10 leading-relaxed" x-text="t[lang].heroSub"></p>
+            
+            <div class="flex flex-wrap justify-center gap-4" id="download">
+                <a href="#" class="flex items-center bg-black text-white px-8 py-3 rounded-2xl btn-apple">
+                    <i class="fab fa-apple text-3xl mr-3"></i>
+                    <div class="text-left">
+                        <div class="text-xs">Download on the</div>
+                        <div class="text-xl font-semibold">App Store</div>
+                    </div>
+                </a>
+                <a href="#" class="flex items-center bg-black text-white px-8 py-3 rounded-2xl btn-apple">
+                    <i class="fab fa-google-play text-2xl mr-3"></i>
+                    <div class="text-left">
+                        <div class="text-xs">GET IT ON</div>
+                        <div class="text-xl font-semibold">Google Play</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <template x-for="feature in t[lang].features">
+                <div class="p-8 rounded-3xl bg-gray-50 hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600 text-2xl">
+                        <i :class="feature.icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" x-text="feature.title"></h3>
+                    <p class="text-gray-600" x-text="feature.desc"></p>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8" x-text="t[lang].contactTitle"></h2>
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="https://t.me/your_support" class="text-3xl text-blue-400 hover:text-blue-600"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="text-3xl text-red-600 hover:text-red-800"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-3xl text-pink-600 hover:text-pink-800"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-3xl text-blue-800 hover:text-blue-900"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="mb-4">&copy; 2026 Tiyn Zaytun LLC. All rights reserved.</p>
+            <p x-text="t[lang].footerNote"></p>
+        </div>
+    </footer>
+
+    <script>
+        function localizer() {
+            return {
+                lang: 'uz',
+                t: {
+                    uz: {
+                        downloadBtn: 'Yuklab olish',
+                        heroTitle: 'Vaqt - bu sizning eng katta boyligingiz.',
+                        heroSub: 'Navbat-Ol bilan kutishni to\'xtating. Xizmatlarni masofadan band qiling va hayotingizdan zavqlaning.',
+                        contactTitle: 'Biz bilan bog\'laning',
+                        footerNote: 'Ushbu loyiha Tiyn Zaytun tomonidan jamiyat baxti uchun ishlab chiqilgan.',
+                        features: [
+                            { icon: 'fas fa-clock', title: 'Vaqtni tejash', desc: 'Sartaroshxona yoki stomatologiyada soatlab kutishga chek qo\'ying.' },
+                            { icon: 'fas fa-mobile-alt', title: 'Oson interfeys', desc: 'Bir necha marta bosish orqali istalgan joydan navbat oling.' },
+                            { icon: 'fas fa-smile', title: 'Baxtli mijozlar', desc: 'Kutish stressidan xalos bo\'ling va unumdorlikni oshiring.' }
+                        ]
+                    },
+                    ru: {
+                        downloadBtn: 'Скачать',
+                        heroTitle: 'Время — ваш самый ценный актив.',
+                        heroSub: 'Перестаньте ждать с Navbat-Ol. Бронируйте услуги удаленно и наслаждайтесь жизнью.',
+                        contactTitle: 'Связаться с нами',
+                        footerNote: 'Этот проект разработан Tiyn Zaytun для благополучия общества.',
+                        features: [
+                            { icon: 'fas fa-clock', title: 'Экономия времени', desc: 'Забудьте о многочасовых очередях в клиниках или салонах.' },
+                            { icon: 'fas fa-mobile-alt', title: 'Простой интерфейс', desc: 'Занимайте очередь в пару кликов из любого места.' },
+                            { icon: 'fas fa-smile', title: 'Счастливые клиенты', desc: 'Избавьтесь от стресса ожидания и будьте продуктивны.' }
+                        ]
+                    },
+                    en: {
+                        downloadBtn: 'Download Now',
+                        heroTitle: 'Time is your most valuable asset.',
+                        heroSub: 'Stop waiting with Navbat-Ol. Book services remotely and enjoy your life.',
+                        contactTitle: 'Get in Touch',
+                        footerNote: 'This project is developed by Tiyn Zaytun for the happiness of society.',
+                        features: [
+                            { icon: 'fas fa-clock', title: 'Save Time', desc: 'End the hours of waiting at dentist or barber shops.' },
+                            { icon: 'fas fa-mobile-alt', title: 'Easy Interface', desc: 'Take your turn from anywhere with just a few clicks.' },
+                            { icon: 'fas fa-smile', title: 'Happy Users', desc: 'Free yourself from waiting stress and increase productivity.' }
+                        ]
+                    },
+                    ar: {
+                        downloadBtn: 'تحميل الآن',
+                        heroTitle: 'الوقت هو أغلى ما تملك.',
+                        heroSub: 'توقف عن الانتظار مع Navbat-Ol. احجز الخدمات عن بُعد واستمتع بحياتك.',
+                        contactTitle: 'اتصل بنا',
+                        footerNote: 'تم تطوير هذا المشروع بواسطة Tiyn Zaytun من أجل سعادة المجتمع.',
+                        features: [
+                            { icon: 'fas fa-clock', title: 'توفير الوقت', desc: 'ضع حداً لساعات الانتظار في العيادات أو الصالونات.' },
+                            { icon: 'fas fa-mobile-alt', title: 'واجهة سهلة', desc: 'احجز دورك من أي مكان ببضع نقرات فقط.' },
+                            { icon: 'fas fa-smile', title: 'عملاء سعداء', desc: 'تخلص من توتر الانتظار وزد من إنتاجيتك.' }
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
