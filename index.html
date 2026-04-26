@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
@@ -111,9 +111,12 @@
             
             <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-gray-600">
                 <a href="#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
-                <a href="about.html" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
+                <!-- <a href="about.html" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
                 <a href="terms.html" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
-                <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
+                <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a> -->
+                <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
+                <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
+                <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
             </div>
 
             <div class="flex items-center space-x-5">
@@ -184,9 +187,14 @@
     <footer class="py-16 text-center text-gray-400">
         <div class="max-w-7xl mx-auto px-6">
             <div class="mb-8 flex justify-center space-x-6 text-[12px] font-medium uppercase tracking-widest text-gray-500">
-                <a href="about.html" class="hover:text-black transition" x-text="t[lang].menuAbout"></a>
+                <!-- <a href="about.html" class="hover:text-black transition" x-text="t[lang].menuAbout"></a>
                 <a href="terms.html" class="hover:text-black transition" x-text="t[lang].menuTerms"></a>
-                <a href="privacy.html" class="hover:text-black transition" x-text="t[lang].menuPrivacy"></a>
+                <a href="privacy.html" class="hover:text-black transition" x-text="t[lang].menuPrivacy"></a> -->
+                
+                <a href="#" class="hover:text-black transition" x-text="t[lang].menuAbout"></a>
+                <a href="#" class="hover:text-black transition" x-text="t[lang].menuTerms"></a>
+                <a href="#" class="hover:text-black transition" x-text="t[lang].menuPrivacy"></a>
+                
             </div>
             <p class="mb-2 text-sm">&copy; 2026 Tiyn Zaytun LLC. All rights reserved.</p>
             <p class="text-xs max-w-lg mx-auto leading-relaxed" x-text="t[lang].footerNote"></p>
@@ -253,117 +261,6 @@
                             { icon: 'fas fa-smile', title: 'حياة بلا توتر', desc: 'تخلص من توتر الانتظار وزد من إنتاجيتك.' }
                         ]
                     }
-                }
-            }
-        }
-    </script>
-</body>
-</html> -->
-
-
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loyiha haqida | Navbat-Ol</title>
-    <meta name="description" content="Navbat-Ol loyihasining maqsadi, jamoasi va xizmat ko'rsatish falsafasi bilan tanishing.">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "Loyiha haqida - Navbat-Ol",
-      "inLanguage": ["uz", "uz-Cyrl", "en", "ru", "ar"],
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Tiyn Zaytun LLC",
-        "founder": { "@type": "Person", "name": "Ahrorbek Abdullaev" }
-      }
-    }
-    </script>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .apple-gradient { background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%); }
-        .nav-blur { background: rgba(255, 255, 255, 0.75); backdrop-filter: saturate(180%) blur(20px); }
-    </style>
-</head>
-<body class="apple-gradient text-gray-900" x-data="localizer()">
-
-    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200" x-data="{ open: false }">
-        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tight">
-                <a href="index.html" class="hover:opacity-80 transition">Navbat<span class="text-blue-600">-Ol</span></a>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-gray-600">
-                <a href="index.html#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
-                <a href="about.html" class="text-blue-600" x-text="t[lang].menuAbout"></a>
-                <a href="faq.html" class="hover:text-blue-600 transition">FAQ</a>
-                <a href="terms.html" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
-                <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
-            </div>
-
-            <div class="flex items-center space-x-5">
-                <select x-model="lang" class="bg-transparent border-none text-[13px] font-semibold focus:ring-0 cursor-pointer">
-                    <option value="uz">O'zbek</option><option value="uz_cyr">Ўзбек</option>
-                    <option value="ru">Русский</option><option value="en">English</option><option value="ar">العربية</option>
-                </select>
-                <button class="md:hidden text-2xl" @click="open = !open"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-        <div class="md:hidden bg-white border-b" x-show="open" @click.away="open = false">
-            <div class="flex flex-col p-6 space-y-4 text-sm font-medium">
-                <a href="index.html" x-text="t[lang].menuFeatures"></a>
-                <a href="about.html" class="text-blue-600" x-text="t[lang].menuAbout"></a>
-                <a href="faq.html">FAQ</a>
-                <a href="terms.html" x-text="t[lang].menuTerms"></a>
-                <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
-            </div>
-        </div>
-    </nav>
-
-    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto min-h-screen">
-        <h1 class="text-4xl md:text-5xl font-bold mb-10 tracking-tight" x-text="t[lang].aboutTitle"></h1>
-        <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
-            <p x-text="t[lang].aboutP1"></p>
-            <div class="grid md:grid-cols-2 gap-8 py-10">
-                <div class="p-8 bg-white rounded-3xl shadow-sm border border-gray-100">
-                    <h3 class="font-bold text-blue-600 mb-2">Missiyamiz</h3>
-                    <p class="text-sm">Vaqtni behuda sarflashni to'xtatish va xizmat ko'rsatish madaniyatini raqamlashtirish.</p>
-                </div>
-                <div class="p-8 bg-white rounded-3xl shadow-sm border border-gray-100">
-                    <h3 class="font-bold text-blue-600 mb-2">Tajriba</h3>
-                    <p class="text-sm">Loyiha 18 yillik IT va xalqaro biznes tajribasiga ega mutaxassislar tomonidan boshqariladi.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="py-16 text-center text-gray-400 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-8 flex justify-center space-x-6 text-[12px] font-medium uppercase tracking-widest text-gray-500">
-                <a href="about.html">About</a><a href="faq.html">FAQ</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
-            </div>
-            <p class="mb-2 text-sm">&copy; 2026 Tiyn Zaytun LLC. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function localizer() {
-            return {
-                lang: 'uz',
-                t: {
-                    uz: { menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik', aboutTitle: 'Vaqtni boshqarish san\'ati', aboutP1: 'Navbat-Ol — bu Tiyn Zaytun tomonidan ishlab chiqilgan, kundalik hayotdagi eng katta muammo — kutish vaqtini yo\'qotishga qaratilgan innovatsion yechimdir.' },
-                    ru: { menuAbout: 'О проекте', aboutTitle: 'Искусство управления временем', aboutP1: 'Navbat-Ol — это инновационное решение от Tiyn Zaytun, направленное на устранение ожидания в очередях.' },
-                    en: { menuAbout: 'About Us', aboutTitle: 'The Art of Time Management', aboutP1: 'Navbat-Ol is an innovative solution developed by Tiyn Zaytun to eliminate the biggest daily problem — waiting time.' }
-                    // Boshqa tillar ham shu tartibda davom etadi...
                 }
             }
         }
