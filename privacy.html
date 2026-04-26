@@ -12,7 +12,14 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Maxfiylik siyosati - Navbat-Ol",
-  "description": "Navbat-Ol ilovasi va veb-saytida foydalanuvchi ma'lumotlarining himoya qilinishi va maxfiylik tamoyillari.",
+  "description": {
+    "uz": "Navbat-Ol ilovasi va veb-saytida foydalanuvchi ma\'lumotlarining himoya qilinishi va maxfiylik tamoyillari.",
+    "uz-Cyrl": "Navbat-Ol иловаси ва веб-сайтида фойдаланувчи маълумотларининг ҳимоя қилиниши ва махфийлик тамойиллари.",
+    "en": "User data protection and privacy principles in the Navbat-Ol application and website.",
+    "ru": "Принципы защиты данных пользователей и конфиденциальности в приложении и на веб-сайте Navbat-Ol.",
+    "ar": "مبادئ حماية بيانات المستخدم والخصوصية في تطبيق وموقع Navbat-Ol."
+  },
+   "inLanguage": ["uz", "uz-Cyrl", "en", "ru", "ar"],
   "publisher": {
     "@type": "Organization",
     "name": "Tiyn Zaytun LLC"
@@ -24,9 +31,10 @@
   }
 }
 </script>
+    
 </head>
 <body class="bg-gray-50">
-    <nav class="p-6 bg-white border-b flex justify-between items-center">
+    <!-- <nav class="p-6 bg-white border-b flex justify-between items-center">
         <a href="index.html" class="font-bold">Navbat-Ol <span class="text-blue-600">Privacy</span></a>
         <select x-model="lang" class="text-sm bg-transparent border-none">
             <option value="uz">O'zbek</option>
@@ -35,6 +43,34 @@
             <option value="en">English</option>
             <option value="ru">Русский</option>
         </select>
+    </nav> -->
+
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tight">
+                <a href="#" class="hover:opacity-80 transition">Navbat<span class="text-blue-600">-Ol</span></a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-gray-600">
+                <a href="#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
+                <a href="about.html" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
+                <a href="terms.html" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
+                <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <div class="relative">
+                    <select x-model="lang" class="bg-transparent border-none text-[13px] font-semibold focus:ring-0 cursor-pointer text-gray-700">
+                        <option value="uz">O'zbek</option>
+                        <option value="uz_cyr">Ўзбек</option>
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+                <a href="#download" class="hidden sm:block bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-xs font-semibold btn-apple" x-text="t[lang].downloadBtn"></a>
+            </div>
+        </div>
     </nav>
 
     <main class="max-w-3xl mx-auto py-20 px-6">
