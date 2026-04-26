@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uz" x-data="localizer()">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxfiylik siyosati | Navbat-Ol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Maxfiylik siyosati - Navbat-Ol",
+  "description": "Navbat-Ol ilovasi va veb-saytida foydalanuvchi ma'lumotlarining himoya qilinishi va maxfiylik tamoyillari.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tiyn Zaytun LLC"
+  },
+  "mainEntity": {
+    "@type": "DigitalDocument",
+    "name": "Privacy Policy Statement",
+    "url": "https://navbatol.uz/privacy.html"
+  }
+}
+</script>
+</head>
+<body class="bg-gray-50">
+    <nav class="p-6 bg-white border-b flex justify-between items-center">
+        <a href="index.html" class="font-bold">Navbat-Ol <span class="text-blue-600">Privacy</span></a>
+        <select x-model="lang" class="text-sm bg-transparent border-none">
+            <option value="uz">O'zbek</option>
+            <option value="uz_cyr">Ўзбек</option>
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+        </select>
+    </nav>
+
+    <main class="max-w-3xl mx-auto py-20 px-6">
+        <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-gray-100">
+            <h1 class="text-3xl font-bold mb-8" x-text="t[lang].title"></h1>
+            <div class="text-gray-600 space-y-6" x-html="t[lang].content"></div>
+        </div>
+    </main>
+
+    <script>
+        function localizer() {
+            return {
+                lang: 'uz',
+                t: {
+                    uz: {
+                        title: 'Maxfiylik siyosati',
+                        content: `<p>Sizning ma'lumotlaringiz <b>Tiyn Zaytun LLC</b> tomonidan qat'iy himoyalanadi.</p><h3>To'planadigan ma'lumotlar</h3><p>Ism, telefon raqami va geolokatsiya xizmat ko'rsatish uchun ishlatiladi.</p>`
+                    },
+                    uz_cyr: {
+                        title: 'Махфийлик сиёсати',
+                        content: `<p>Сизнинг маълумотларингиз <b>Tiyn Zaytun LLC</b> томонидан қатъий ҳимояланади.</p>`
+                    },
+                    en: {
+                        title: 'Privacy Policy',
+                        content: `<p>Your data is strictly protected by <b>Tiyn Zaytun LLC</b>.</p><h3>Data Collection</h3><p>Name, phone number, and location are used for service purposes.</p>`
+                    },
+                    ru: {
+                        title: 'Политика конфиденциальности',
+                        content: `<p>Ваши данные строго защищены <b>Tiyn Zaytun LLC</b>.</p>`
+                    },
+                  ar: {
+                        title: 'سياسة الخصوصية',
+                        content: `<p>خصوصيتك تهمنا. تقوم شركة <b>Tiyn Zaytun LLC</b> بجمع البيانات فقط لتحسين جودة الخدمة.</p>`
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
