@@ -38,19 +38,32 @@
                         <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
                     </div>
                 </div>
+                
                 <div class="flex items-center space-x-2 md:space-x-4">
-                    <select x-model="lang" class="bg-transparent border-none text-[12px] md:text-[13px] font-bold focus:ring-0 cursor-pointer text-gray-700">
-                       <option value="uz">O'zbek</option>
+                <div class="relative">
+                    <select x-model="lang" class="bg-transparent border-none text-[12px] md:text-[13px] font-bold focus:ring-0 cursor-pointer text-gray-700 py-1 pl-2 pr-6">
+                        <option value="uz">O'zbek</option>
                         <option value="uz_cyr">Ўзбек</option>
                         <option value="ru">Русский</option>
                         <option value="en">English</option>
                         <option value="ar">العربية</option>
                     </select>
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-gray-600">
-                        <i class="fas fa-bars text-xl" x-show="!mobileMenuOpen"></i>
-                        <i class="fas fa-times text-xl" x-show="mobileMenuOpen"></i>
-                    </button>
                 </div>
+
+                <a href="index.html#download" class="hidden sm:block bg-blue-600 text-white px-5 py-2 rounded-full text-[12px] font-semibold hover:bg-blue-700 transition btn-apple whitespace-nowrap">
+                    <span x-text="t[lang].downloadBtn || 'Yuklab olish'"></span>
+                </a>
+
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-gray-600 hover:text-blue-600 focus:outline-none transition">
+                    <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+                
             </div>
         </div>
         <div x-show="mobileMenuOpen" class="md:hidden bg-white border-b border-gray-100 shadow-xl px-6 py-8 space-y-6" x-cloak>
@@ -133,6 +146,7 @@
                 },
                 t: {
                     uz: {
+                        downloadBtn: 'Yuklab olish',
                         menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik',
                         faqTitle: 'Yordam Markazi', faqSub: 'Navbat-Ol haqida ko\'p so\'raladigan savollar va batafsil javoblar.',
                         footerNote: 'Toshkent, O\'zbekiston. Biz xizmat ko\'rsatish sifatini oshiramiz.',
@@ -147,6 +161,7 @@
                         ]
                     },
                     uz_cyr: {
+                        downloadBtn: 'Юклаб олиш',
                         menuFeatures: 'Имкониятлар', menuAbout: 'Лойиҳа ҳақида', menuTerms: 'Шартлар', menuPrivacy: 'Махфийлик',
                         faqTitle: 'Ёрдам Маркази', faqSub: 'Navbat-Ol ҳақида кўп сўраладиган саволлар ва батафсил жавоблар.',
                         footerNote: 'Тошкент, Ўзбекистон. Биз хизмат кўрсатиш сифатини оширамиз.',
@@ -161,6 +176,7 @@
                         ]
                     },
                     ru: {
+                        downloadBtn: 'Скачать сейчас',
                         menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Конфиденциальность',
                         faqTitle: 'Центр помощи', faqSub: 'Часто задаваемые вопросы и подробные ответы о системе Navbat-Ol.',
                         footerNote: 'Ташкент, Узбекистан. Мы повышаем качество обслуживания.',
@@ -175,6 +191,7 @@
                         ]
                     },
                     en: {
+                        downloadBtn: 'Download Now',
                         menuFeatures: 'Features', menuAbout: 'About Project', menuTerms: 'Terms', menuPrivacy: 'Privacy',
                         faqTitle: 'Help Center', faqSub: 'Frequently asked questions and detailed answers about Navbat-Ol.',
                         footerNote: 'Tashkent, Uzbekistan. We improve service quality.',
@@ -189,6 +206,7 @@
                         ]
                     },
                     ar: {
+                        downloadBtn: 'تحميل الآن',
                         menuFeatures: 'المميزات', menuAbout: 'حول المشروع', menuTerms: 'الشروط', menuPrivacy: 'الخصوصية',
                         faqTitle: 'مركز المساعدة', faqSub: 'الأسئلة الشائعة والأجوبة التفصيلية حول Navbat-Ol.',
                         footerNote: 'طشقند، أوزبكستان. نحن نرفع جودة الخدمة.',
