@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
@@ -647,5 +647,184 @@ function localizer(activePage) {
 
     </script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Navbat-Ol — Onlayn navbat band qilish</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .nav-blur { background: rgba(255, 255, 255, 0.75); backdrop-filter: saturate(180%) blur(20px); }
+        .sidebar-link.active { color: #2563eb; font-weight: 700; border-left: 3px solid #2563eb; padding-left: 1rem; }
+        [x-cloak] { display: none !important; }
+        .faq-card { transition: all 0.3s ease; }
+        .faq-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-[#f5f5f7] text-gray-900" x-data="localizer()" x-cloak>
+
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tight hover:opacity-80 transition">
+                        Navbat<span class="text-blue-600">-Ol</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex flex-1 justify-center px-4">
+                    <div class="flex space-x-6 lg:space-x-10 text-[13px] font-medium text-gray-600 uppercase tracking-wide">
+                        <a href="index.html#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
+                        <a href="about.html" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
+                        <a href="faq.html" class="text-blue-600 font-bold border-b-2 border-blue-600" x-text="'FAQ'"></a>
+                        <a href="terms.html" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
+                        <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <select x-model="lang" class="bg-transparent border-none text-[12px] md:text-[13px] font-bold focus:ring-0 cursor-pointer text-gray-700">
+                        <option value="uz">UZ</option>
+                        <option value="uz_cyr">ЎЗБ</option>
+                        <option value="ru">RU</option>
+                        <option value="en">EN</option>
+                        <option value="ar">AR</option>
+                    </select>
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-gray-600">
+                        <i class="fas fa-bars text-xl" x-show="!mobileMenuOpen"></i>
+                        <i class="fas fa-times text-xl" x-show="mobileMenuOpen"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white border-b border-gray-100 shadow-xl px-6 py-8 space-y-6" x-cloak>
+            <a href="index.html#features" class="block text-lg font-medium" x-text="t[lang].menuFeatures"></a>
+            <a href="about.html" class="block text-lg font-medium" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" class="block text-lg font-medium text-blue-600" x-text="'FAQ'"></a>
+            <a href="terms.html" class="block text-lg font-medium" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" class="block text-lg font-medium" x-text="t[lang].menuPrivacy"></a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 bg-white border-b border-gray-200 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight" x-text="t[lang].faqTitle"></h1>
+            <p class="text-xl text-gray-500 max-w-2xl" x-text="t[lang].faqSub"></p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-12" x-data="{ activeSection: 'general' }">
+        
+        <aside class="w-full md:w-72 flex-shrink-0">
+            <div class="sticky top-32 space-y-2">
+                <template x-for="cat in t[lang].faqCategories" :key="cat.id">
+                    <a :href="'#' + cat.id" 
+                       class="block px-4 py-3 rounded-lg text-sm font-medium transition-all hover:bg-gray-100"
+                       :class="activeSection === cat.id ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600 font-bold' : 'text-gray-500'"
+                       @click="activeSection = cat.id"
+                       x-text="cat.title">
+                    </a>
+                </template>
+            </div>
+        </aside>
+
+        <div class="flex-1 space-y-12">
+            <template x-for="cat in t[lang].faqCategories" :key="cat.id">
+                <section :id="cat.id" class="scroll-mt-32">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800" x-text="cat.title"></h2>
+                    <div class="space-y-4">
+                        <template x-for="(qa, idx) in cat.items" :key="idx">
+                            <div class="faq-card bg-white rounded-2xl border border-gray-100 shadow-sm" x-data="{ open: false }">
+                                <button @click="open = !open" class="w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                                    <span class="font-semibold text-gray-800 text-lg" x-text="qa.q"></span>
+                                    <i class="fas fa-chevron-down text-blue-500 transition-transform duration-300" :class="open ? 'rotate-180' : ''"></i>
+                                </button>
+                                <div x-show="open" x-collapse x-transition class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4" x-html="qa.a">
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </section>
+            </template>
+        </div>
+    </main>
+
+    <footer class="py-16 text-center text-gray-400 border-t border-gray-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-8 flex flex-wrap justify-center gap-6 text-[11px] font-bold uppercase tracking-widest text-gray-500">
+                <a href="about.html" x-text="t[lang].menuAbout"></a>
+                <a href="faq.html" class="text-blue-600">FAQ</a>
+                <a href="terms.html" x-text="t[lang].menuTerms"></a>
+                <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
+            </div>
+            <p class="mb-2 text-sm text-gray-600 font-semibold">&copy; 2026 Tiyn Zaytun LLC. All rights reserved.</p>
+            <p class="text-[11px] max-w-xl mx-auto leading-relaxed" x-text="t[lang].footerNote"></p>
+        </div>
+    </footer>
+
+    <script>
+        function localizer() {
+            return {
+                lang: 'uz',
+                t: {
+                    uz: {
+                        menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik',
+                        faqTitle: 'Yordam Markazi', faqSub: 'Navbat-Ol haqida ko\'p so\'raladigan savollar va batafsil javoblar.',
+                        footerNote: 'Toshkent, O\'zbekiston. Biz xizmat ko\'rsatish sifatini oshiramiz.',
+                        faqCategories: [
+                            { id: 'general', title: 'Umumiy', items: [
+                                { q: 'Navbat-Ol o\'zi nima?', a: 'Navbat-Ol — xizmat ko\'rsatish joylarida masofadan navbat band qilish tizimidir.' },
+                                { q: 'Ro\'yxatdan o\'tish shartmi?', a: 'Ha, navbatlaringizni kuzatish uchun telefon raqam orqali ro\'yxatdan o\'tiladi.' }
+                            ]},
+                            { id: 'app', title: 'Ilova bo\'yicha', items: [
+                                { q: 'Ilova bepulmi?', a: 'Mijozlar uchun ilovadan foydalanish mutlaqo <strong>bepul</strong>.' }
+                            ]}
+                        ]
+                    },
+                    uz_cyr: {
+                        menuFeatures: 'Имкониятлар', menuAbout: 'Лойиҳа ҳақида', menuTerms: 'Шартлар', menuPrivacy: 'Махфийлик',
+                        faqTitle: 'Ёрдам Маркази', faqSub: 'Навбат-Ол ҳақида кўп сўраладиган саволлар.',
+                        faqCategories: [
+                            { id: 'general', title: 'Умумий', items: [{ q: 'Навбат-Ол нима?', a: 'Навбат-Ол — масофадан навбат банд қилиш тизими.' }] }
+                        ]
+                    },
+                    ru: {
+                        menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Приватность',
+                        faqTitle: 'Центр поддержки', faqSub: 'Часто задаваемые вопросы о Navbat-Ol.',
+                        faqCategories: [
+                            { id: 'general', title: 'Общие вопросы', items: [{ q: 'Что такое Navbat-Ol?', a: 'Это система онлайн-бронирования очереди.' }] }
+                        ]
+                    },
+                    en: {
+                        menuFeatures: 'Features', menuAbout: 'About', menuTerms: 'Terms', menuPrivacy: 'Privacy',
+                        faqTitle: 'Help Center', faqSub: 'Frequently asked questions about Navbat-Ol.',
+                        faqCategories: [
+                            { id: 'general', title: 'General', items: [{ q: 'What is Navbat-Ol?', a: 'It is a remote queue booking system.' }] }
+                        ]
+                    },
+                    ar: {
+                        menuFeatures: 'المميزات', menuAbout: 'عن المشروع', menuTerms: 'الشروط', menuPrivacy: 'الخصوصية',
+                        faqTitle: 'مركز المساعدة', faqSub: 'الأسئلة الشائعة حول Navbat-Ol.',
+                        faqCategories: [
+                            { id: 'general', title: 'عام', items: [{ q: 'ما هو Navbat-Ol؟', a: 'هو نظام حجز الدور عن بُعد.' }] }
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
