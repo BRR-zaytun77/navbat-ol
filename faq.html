@@ -120,8 +120,17 @@
 
     <script>
         function localizer() {
+            // 1. LocalStorage'dan tanlangan tilni tekshiramiz
+            // Agar xotira bo'sh bo'lsa, standart til sifatida 'uz' ni oladi
+            const selectedLang = localStorage.getItem('navbat_ol_user_lang') || 'uz';
             return {
-                lang: 'uz',
+                lang: selectedLang,
+                // Til o'zgarganda xotiraga saqlash funksiyasi
+                init() {
+                    this.$watch('lang', (val) => {
+                        localStorage.setItem('navbat_ol_user_lang', val);
+                    });
+                },
                 t: {
                     uz: {
                         menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik',
@@ -139,30 +148,58 @@
                     },
                     uz_cyr: {
                         menuFeatures: 'Имкониятлар', menuAbout: 'Лойиҳа ҳақида', menuTerms: 'Шартлар', menuPrivacy: 'Махфийлик',
-                        faqTitle: 'Ёрдам Маркази', faqSub: 'Навбат-Ол ҳақида кўп сўраладиган саволлар.',
+                        faqTitle: 'Ёрдам Маркази', faqSub: 'Navbat-Ol ҳақида кўп сўраладиган саволлар ва батафсил жавоблар.',
+                        footerNote: 'Тошкент, Ўзбекистон. Биз хизмат кўрсатиш сифатини оширамиз.',
                         faqCategories: [
-                            { id: 'general', title: 'Умумий', items: [{ q: 'Навбат-Ол нима?', a: 'Навбат-Ол — масофадан навбат банд қилиш тизими.' }] }
+                            { id: 'general', title: 'Умумий', items: [
+                                { q: 'Navbat-Ol ўзи нима?', a: 'Navbat-Ol — хизмат кўрсатиш жойларида масофадан навбат банд қилиш тизимидир.' },
+                                { q: 'Рўйхатдан ўтиш шартми?', a: 'Ҳа, навбатларингизни кузатиш учун телефон рақам орқали рўйхатдан ўтилади.' }
+                            ]},
+                            { id: 'app', title: 'Илова бўйича', items: [
+                                { q: 'Илова бепулми?', a: 'Мижозлар учун иловадан фойдаланиш мутлақо <strong>бепул</strong>.' }
+                            ]}
                         ]
                     },
                     ru: {
-                        menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Приватность',
-                        faqTitle: 'Центр поддержки', faqSub: 'Часто задаваемые вопросы о Navbat-Ol.',
+                        menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Конфиденциальность',
+                        faqTitle: 'Центр помощи', faqSub: 'Часто задаваемые вопросы и подробные ответы о системе Navbat-Ol.',
+                        footerNote: 'Ташкент, Узбекистан. Мы повышаем качество обслуживания.',
                         faqCategories: [
-                            { id: 'general', title: 'Общие вопросы', items: [{ q: 'Что такое Navbat-Ol?', a: 'Это система онлайн-бронирования очереди.' }] }
+                            { id: 'general', title: 'Общие вопросы', items: [
+                                { q: 'Что такое Navbat-Ol?', a: 'Navbat-Ol — это система дистанционного бронирования очереди в местах оказания услуг.' },
+                                { q: 'Нужна ли регистрация?', a: 'Да, регистрация по номеру телефона необходима для отслеживания ваших очередей.' }
+                            ]},
+                            { id: 'app', title: 'О приложении', items: [
+                                { q: 'Приложение бесплатное?', a: 'Использование приложения для клиентов абсолютно <strong>бесплатно</strong>.' }
+                            ]}
                         ]
                     },
                     en: {
-                        menuFeatures: 'Features', menuAbout: 'About', menuTerms: 'Terms', menuPrivacy: 'Privacy',
-                        faqTitle: 'Help Center', faqSub: 'Frequently asked questions about Navbat-Ol.',
+                        menuFeatures: 'Features', menuAbout: 'About Project', menuTerms: 'Terms', menuPrivacy: 'Privacy',
+                        faqTitle: 'Help Center', faqSub: 'Frequently asked questions and detailed answers about Navbat-Ol.',
+                        footerNote: 'Tashkent, Uzbekistan. We improve service quality.',
                         faqCategories: [
-                            { id: 'general', title: 'General', items: [{ q: 'What is Navbat-Ol?', a: 'It is a remote queue booking system.' }] }
+                            { id: 'general', title: 'General', items: [
+                                { q: 'What is Navbat-Ol?', a: 'Navbat-Ol is a remote queue booking system for service locations.' },
+                                { q: 'Is registration required?', a: 'Yes, registration via phone number is required to track your status.' }
+                            ]},
+                            { id: 'app', title: 'Application', items: [
+                                { q: 'Is the app free?', a: 'The app is strictly <strong>free</strong> for all customers.' }
+                            ]}
                         ]
                     },
                     ar: {
-                        menuFeatures: 'المميزات', menuAbout: 'عن المشروع', menuTerms: 'الشروط', menuPrivacy: 'الخصوصية',
-                        faqTitle: 'مركز المساعدة', faqSub: 'الأسئلة الشائعة حول Navbat-Ol.',
+                        menuFeatures: 'المميزات', menuAbout: 'حول المشروع', menuTerms: 'الشروط', menuPrivacy: 'الخصوصية',
+                        faqTitle: 'مركز المساعدة', faqSub: 'الأسئلة الشائعة والأجوبة التفصيلية حول Navbat-Ol.',
+                        footerNote: 'طشقند، أوزبكستان. نحن نرفع جودة الخدمة.',
                         faqCategories: [
-                            { id: 'general', title: 'عام', items: [{ q: 'ما هو Navbat-Ol؟', a: 'هو نظام حجز الدور عن بُعد.' }] }
+                            { id: 'general', title: 'عام', items: [
+                                { q: 'ما هو Navbat-Ol؟', a: 'Navbat-Ol هو نظام حجز الطوابير عن بعد في أماكن تقديم الخدمة.' },
+                                { q: 'هل التسجيل مطلوب؟', a: 'نعم، يلزم التسجيل عبر رقم الهاتف لمتابعة طوابيرك.' }
+                            ]},
+                            { id: 'app', title: 'حول التطبيق', items: [
+                                { q: 'هل التطبيق مجاني؟', a: 'استخدام التطبيق للعملاء <strong>مجاني</strong> تماماً.' }
+                            ]}
                         ]
                     }
                 }
