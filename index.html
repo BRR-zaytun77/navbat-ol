@@ -99,9 +99,6 @@
             <div class="flex items-center space-x-2 md:space-x-4">
                 <div class="relative">
                     <select x-model="lang" class="bg-transparent border-none text-[12px] md:text-[13px] font-bold focus:ring-0 cursor-pointer text-gray-700 py-1 pl-2 pr-6">
-                        <!-- <option value="uz">UZ</option>
-                        <option value="ru">RU</option>
-                        <option value="en">EN</option> -->
                         <option value="uz">O'zbek</option>
                         <option value="uz_cyr">Ўзбек</option>
                         <option value="ru">Русский</option>
@@ -211,9 +208,17 @@
     </footer>
 
     <script>
-        function localizer() {
+        function localizer() {// 1. LocalStorage'dan tanlangan tilni tekshiramiz
+            // Agar xotira bo'sh bo'lsa, standart til sifatida 'uz' ni oladi
+            const selectedLang = localStorage.getItem('user_lang') || 'uz';
             return {
-                lang: 'uz',
+                lang: selectedLang,
+                // Til o'zgarganda xotiraga saqlash funksiyasi
+                init() {
+                    this.$watch('lang', (val) => {
+                        localStorage.setItem('selected_language', val);
+                    });
+                },
                 t: {
                     uz: {
                         menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik',
