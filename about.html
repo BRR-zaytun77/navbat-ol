@@ -160,13 +160,13 @@
         function localizer() {
             // 1. LocalStorage'dan tanlangan tilni tekshiramiz
             // Agar xotira bo'sh bo'lsa, standart til sifatida 'uz' ni oladi
-            const selectedLang = localStorage.getItem('user_lang') || 'uz';
+            const selectedLang = localStorage.getItem('navbat_ol_user_lang') || 'uz';
             return {
                 lang: selectedLang,
                 // Til o'zgarganda xotiraga saqlash funksiyasi
                 init() {
                     this.$watch('lang', (val) => {
-                        localStorage.setItem('selected_language', val);
+                        localStorage.setItem('navbat_ol_user_lang', val);
                     });
                 },
                 t: {
