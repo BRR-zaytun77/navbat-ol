@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Navbat-Ol | Onlayn navbat band qilish — O'zbekiston №1 navbat tizimi</title>
+    <meta name="description" content="Navbat-Ol — O'zbekistondagi eng ilg'or onlayn navbat olish tizimi. Tibbiyot markazlari, go'zallik salonlari va xizmat ko'rsatish shoxobchalari uchun vaqtni tejash yechimi.">
+    <meta name="keywords" content="navbat-ol, onlayn navbat, navbat band qilish, vaqtni tejash, queue management, Uzbekistan booking app">
+    <meta name="author" content="Tiyn Zaytun LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://navbatol.uz/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Navbat-Ol — Vaqtingiz sizning eng katta boyligingiz">
+    <meta property="og:description" content="Navbat-Ol bilan kutishni to'xtating. Masofadan navbat oling va hayotingizdan zavqlaning.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://navbatol.uz">
+    <meta property="og:image" content="https://navbatol.uz/og-image.jpg">
+    <meta property="og:locale" content="uz_UZ">
+    <meta property="og:locale:alternate" content="ru_UZ">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Navbat-Ol — Online Queue Booking Uzbekistan">
+    <meta name="twitter:description" content="Stop waiting. Book services remotely with Navbat-Ol.">
+
+    <!-- Alternate language hreflang -->
+    <link rel="alternate" hreflang="uz" href="https://navbatol.uz/">
+    <link rel="alternate" hreflang="ru" href="https://navbatol.uz/?lang=ru">
+    <link rel="alternate" hreflang="en" href="https://navbatol.uz/?lang=en">
+    <link rel="alternate" hreflang="ar" href="https://navbatol.uz/?lang=ar">
+    <link rel="alternate" hreflang="x-default" href="https://navbatol.uz/">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Navbat-Ol",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://navbatol.uz",
+      "description": "Online appointment booking and queue management system for Uzbekistan. Book remotely for dentistry, beauty salons, medical centers and more.",
+      "inLanguage": ["uz", "ru", "en", "ar"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "UZS" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "ratingCount": "150" },
+      "author": { "@type": "Organization", "name": "Tiyn Zaytun LLC", "url": "https://navbatol.uz" }
+    }
+    </script>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tiyn Zaytun LLC",
+      "url": "https://navbatol.uz",
+      "logo": "https://navbatol.uz/logo.png",
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "url": "https://t.me/navbat_ol_support_bot" },
+      "sameAs": ["https://t.me/navbat_ol_support_bot"]
+    }
+    </script>
+
+    <!-- FAQPage structured data (AI/LLM-friendly) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is Navbat-Ol free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, core features are completely free for users." } },
+        { "@type": "Question", "name": "Which services can I book?", "acceptedAnswer": { "@type": "Answer", "text": "Medical centers, dentists, barbershops, beauty salons, and government offices." } },
+        { "@type": "Question", "name": "Does Navbat-Ol work on iOS and Android?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, available on both App Store and Google Play." } }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+    <style>
+        /* HOME-specific styles */
+        .hero { padding: 140px 24px 100px; text-align: center; }
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 5rem);
+            font-weight: 800; letter-spacing: -0.04em;
+            background: linear-gradient(180deg, #111827 0%, #6b7280 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            margin-bottom: 24px; line-height: 1.1;
+        }
+        .hero p { font-size: clamp(1rem, 2.5vw, 1.3rem); color: #6b7280; font-weight: 300; max-width: 600px; margin: 0 auto 48px; line-height: 1.65; }
+
+        .store-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+        .store-btn {
+            display: flex; align-items: center; background: #000; color: #fff;
+            padding: 12px 28px; border-radius: 18px; text-decoration: none;
+            transition: transform .2s, box-shadow .2s; gap: 12px;
+        }
+        .store-btn:hover { transform: scale(1.03); box-shadow: 0 16px 40px rgba(0,0,0,0.18); }
+        .store-btn i { font-size: 2rem; }
+        .store-btn-label { text-align: left; }
+        .store-btn-label .sub { font-size: 9px; text-transform: uppercase; opacity: .6; letter-spacing: .06em; }
+        .store-btn-label .main { font-size: 1.2rem; font-weight: 700; line-height: 1.2; font-family: 'Sora', sans-serif; }
+
+        .features { padding: 80px 24px; background: #fff; }
+        .features-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .feature-card {
+            padding: 40px 36px; border-radius: 28px; background: #f9fafb;
+            border: 1px solid transparent;
+            transition: background .4s, box-shadow .4s, border-color .4s;
+        }
+        .feature-card:hover { background: #fff; box-shadow: 0 20px 60px rgba(0,0,0,0.07); border-color: #e5e7eb; }
+        .feature-icon {
+            width: 52px; height: 52px; border-radius: 16px;
+            background: #eff6ff; display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: #2563eb; margin-bottom: 24px;
+        }
+        .feature-card h3 { font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
+        .feature-card p { color: #6b7280; line-height: 1.7; font-size: 15px; }
+
+        .contact-section { padding: 80px 24px; background: #f9fafb; border-top: 1px solid #e5e7eb; text-align: center; }
+        .contact-section h2 { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 36px; }
+    </style>
+</head>
+<body x-data="localizer('home')" x-init="init()">
+
+    <!-- NAV -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Navbat<span>-Ol</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#features" x-text="t[lang].menuFeatures"></a></li>
+                <li><a href="about.html" x-text="t[lang].menuAbout"></a></li>
+                <li><a href="faq.html" x-text="t[lang].menuFaq"></a></li>
+                <li><a href="terms.html" x-text="t[lang].menuTerms"></a></li>
+                <li><a href="privacy.html" x-text="t[lang].menuPrivacy"></a></li>
+            </ul>
+
+            <div class="nav-right">
+                <select class="lang-select" x-model="lang">
+                    <option value="uz">O'zbek</option>
+                    <option value="uz_cyr">Ўзбек</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <a href="#download" class="btn-primary" x-text="t[lang].downloadBtn"></a>
+                <button class="hamburger" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu" :class="{ open: mobileMenuOpen }">
+            <a href="#features" @click="mobileMenuOpen=false" x-text="t[lang].menuFeatures"></a>
+            <a href="about.html" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" x-text="t[lang].menuFaq"></a>
+            <a href="terms.html" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
+            <div class="lang-row">
+                <button class="lang-btn" :class="{ active: lang==='uz' }" @click="lang='uz'">O'zbek</button>
+                <button class="lang-btn" :class="{ active: lang==='uz_cyr' }" @click="lang='uz_cyr'">Ўзбек</button>
+                <button class="lang-btn" :class="{ active: lang==='ru' }" @click="lang='ru'">Рус</button>
+                <button class="lang-btn" :class="{ active: lang==='en' }" @click="lang='en'">EN</button>
+                <button class="lang-btn" :class="{ active: lang==='ar' }" @click="lang='ar'">ع</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="download">
+        <div>
+            <h1 x-text="t[lang].heroTitle"></h1>
+            <p x-text="t[lang].heroSub"></p>
+            <div class="store-btns">
+                <a href="#" class="store-btn">
+                    <i class="fab fa-apple"></i>
+                    <div class="store-btn-label">
+                        <div class="sub">Download on the</div>
+                        <div class="main">App Store</div>
+                    </div>
+                </a>
+                <a href="#" class="store-btn">
+                    <i class="fab fa-google-play"></i>
+                    <div class="store-btn-label">
+                        <div class="sub">Get it on</div>
+                        <div class="main">Google Play</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="features-grid">
+            <template x-for="feature in t[lang].features" :key="feature.title">
+                <div class="feature-card">
+                    <div class="feature-icon"><i :class="feature.icon"></i></div>
+                    <h3 x-text="feature.title"></h3>
+                    <p x-text="feature.desc"></p>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section">
+        <h2 x-text="t[lang].contactTitle"></h2>
+        <div class="social-row">
+            <a href="https://t.me/navbat_ol_support_bot" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="about.html" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" x-text="t[lang].menuFaq"></a>
+            <a href="terms.html" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Tiyn Zaytun LLC. <span x-text="t[lang].footerRights"></span></p>
+        <p class="footer-note" x-text="t[lang].footerNote"></p>
+    </footer>
+
+
+    <script src="shared.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
