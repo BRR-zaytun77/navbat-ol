@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Navbat-Ol | Foydalanish shartlari — Terms & Conditions</title>
+    <meta name="description" content="Navbat-Ol foydalanish shartlari. Terms and conditions for using the Navbat-Ol online booking platform.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://navbatol.uz/terms.html">
+
+    <meta property="og:title" content="Terms & Conditions — Navbat-Ol">
+    <meta property="og:description" content="Read the terms and conditions for using Navbat-Ol.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://navbatol.uz/terms.html">
+
+    <link rel="alternate" hreflang="uz" href="https://navbatol.uz/terms.html">
+    <link rel="alternate" hreflang="ru" href="https://navbatol.uz/terms.html?lang=ru">
+    <link rel="alternate" hreflang="en" href="https://navbatol.uz/terms.html?lang=en">
+    <link rel="alternate" hreflang="ar" href="https://navbatol.uz/terms.html?lang=ar">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": "https://navbatol.uz/terms.html",
+      "name": "Terms & Conditions — Navbat-Ol",
+      "description": "Terms and conditions for using the Navbat-Ol online booking platform.",
+      "publisher": { "@type": "Organization", "name": "Tiyn Zaytun LLC", "url": "https://navbatol.uz" }
+    }
+    </script>
+
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body x-data="localizer('terms')" x-init="init()">
+
+    <!-- NAV -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Navbat<span>-Ol</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#features" x-text="t[lang].menuFeatures"></a></li>
+                <li><a href="about.html" x-text="t[lang].menuAbout"></a></li>
+                <li><a href="faq.html" x-text="t[lang].menuFaq"></a></li>
+                <li><a href="terms.html" class="active" x-text="t[lang].menuTerms"></a></li>
+                <li><a href="privacy.html" x-text="t[lang].menuPrivacy"></a></li>
+            </ul>
+            <div class="nav-right">
+                <select class="lang-select" x-model="lang">
+                    <option value="uz">O'zbek</option>
+                    <option value="uz_cyr">Ўзбек</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <a href="index.html#download" class="btn-primary" x-text="t[lang].downloadBtn"></a>
+                <button class="hamburger" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" :class="{ open: mobileMenuOpen }">
+            <a href="index.html#features" x-text="t[lang].menuFeatures"></a>
+            <a href="about.html" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" x-text="t[lang].menuFaq"></a>
+            <a href="terms.html" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
+            <div class="lang-row">
+                <button class="lang-btn" :class="{ active: lang==='uz' }" @click="lang='uz'">O'zbek</button>
+                <button class="lang-btn" :class="{ active: lang==='uz_cyr' }" @click="lang='uz_cyr'">Ўзбек</button>
+                <button class="lang-btn" :class="{ active: lang==='ru' }" @click="lang='ru'">Рус</button>
+                <button class="lang-btn" :class="{ active: lang==='en' }" @click="lang='en'">EN</button>
+                <button class="lang-btn" :class="{ active: lang==='ar' }" @click="lang='ar'">ع</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+        <h1 x-text="t[lang].termsTitle"></h1>
+        <p class="date" x-text="t[lang].termsDate"></p>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content-section">
+        <template x-for="section in t[lang].termsSections" :key="section.title">
+            <div class="content-block">
+                <h2 x-text="section.title"></h2>
+                <p x-text="section.body"></p>
+            </div>
+        </template>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="about.html" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" x-text="t[lang].menuFaq"></a>
+            <a href="terms.html" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Tiyn Zaytun LLC. <span x-text="t[lang].footerRights"></span></p>
+        <p class="footer-note" x-text="t[lang].footerNote"></p>
+    </footer>
+
+
+    <script src="shared.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
