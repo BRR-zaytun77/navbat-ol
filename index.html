@@ -70,9 +70,43 @@
   }
 }
 </script>
-
     
-<nav class="fixed w-full z-50 nav-blur border-b border-gray-200" x-data="{ mobileMenuOpen: false }">
+</head>
+    
+<body class="apple-gradient text-gray-900" x-data="localizer()">
+
+    <!-- <nav class="fixed w-full z-50 nav-blur border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tight">
+                <a href="#" class="hover:opacity-80 transition">Navbat<span class="text-blue-600">-Ol</span></a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-gray-600">
+                <a href="#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
+                <a href="about.html" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
+                <a href="terms.html" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
+                <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
+                <!-- <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
+                <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
+                <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a> -->
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <div class="relative">
+                    <select x-model="lang" class="bg-transparent border-none text-[13px] font-semibold focus:ring-0 cursor-pointer text-gray-700">
+                        <option value="uz">O'zbek</option>
+                        <option value="uz_cyr">Ўзбек</option>
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+                <a href="#download" class="hidden sm:block bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-xs font-semibold btn-apple" x-text="t[lang].downloadBtn"></a>
+            </div>
+        </div>
+    </nav> -->
+
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200" x-data="{ mobileMenuOpen: false }">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div class="text-2xl font-bold tracking-tight">
             <a href="index.html" class="hover:opacity-80 transition">Navbat<span class="text-blue-600">-Ol</span></a>
@@ -122,40 +156,6 @@
         </div>
     </div>
 </nav>
-    
-</head>
-<body class="apple-gradient text-gray-900" x-data="localizer()">
-
-    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tight">
-                <a href="#" class="hover:opacity-80 transition">Navbat<span class="text-blue-600">-Ol</span></a>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-gray-600">
-                <a href="#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
-                <a href="about.html" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
-                <a href="terms.html" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
-                <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
-                <!-- <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
-                <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
-                <a href="#" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a> -->
-            </div>
-
-            <div class="flex items-center space-x-5">
-                <div class="relative">
-                    <select x-model="lang" class="bg-transparent border-none text-[13px] font-semibold focus:ring-0 cursor-pointer text-gray-700">
-                        <option value="uz">O'zbek</option>
-                        <option value="uz_cyr">Ўзбек</option>
-                        <option value="ru">Русский</option>
-                        <option value="en">English</option>
-                        <option value="ar">العربية</option>
-                    </select>
-                </div>
-                <a href="#download" class="hidden sm:block bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-xs font-semibold btn-apple" x-text="t[lang].downloadBtn"></a>
-            </div>
-        </div>
-    </nav>
 
     <section class="pt-40 pb-24 px-6 text-center">
         <div class="max-w-4xl mx-auto">
