@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
@@ -723,5 +723,146 @@ function localizer(activePage) {
 
     </script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbat-Ol | Onlayn navbat band qilish tizimi</title>
+    <meta name="description" content="Navbat-Ol — O'zbekistondagi eng ilg'or onlayn navbat olish tizimi. Vaqtingizni qadrlang.">
+    <meta name="author" content="Tiyn Zaytun LLC">
+    <link rel="canonical" href="https://navbatol.uz">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .apple-gradient { background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%); }
+        .nav-blur { background: rgba(255, 255, 255, 0.75); backdrop-filter: saturate(180%) blur(20px); }
+        .btn-apple { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-apple:hover { transform: scale(1.02); }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Navbat-Ol",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "BusinessApplication",
+      "inLanguage": ["uz", "uz-Cyrl", "en", "ru", "ar"],
+      "author": { "@type": "Organization", "name": "Tiyn Zaytun LLC", "url": "https://navbatol.uz" }
+    }
+    </script>
+</head>
+<body class="apple-gradient text-gray-900" x-data="localizer()">
+
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tight">
+                <a href="index.html" class="hover:opacity-80 transition">Navbat<span class="text-blue-600">-Ol</span></a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-gray-600">
+                <a href="index.html#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
+                <a href="about.html" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
+                <a href="faq.html" class="hover:text-blue-600 transition">FAQ</a>
+                <a href="terms.html" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
+                <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <select x-model="lang" class="bg-transparent border-none text-[13px] font-semibold focus:ring-0 cursor-pointer">
+                    <option value="uz">O'zbek</option>
+                    <option value="uz_cyr">Ўзбек</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <button @click="open = !open" class="md:hidden text-xl"><i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i></button>
+            </div>
+        </div>
+
+        <div x-show="open" class="md:hidden bg-white border-b border-gray-100 p-6 space-y-4 shadow-xl" x-transition>
+            <a href="index.html#features" class="block text-sm" @click="open = false" x-text="t[lang].menuFeatures"></a>
+            <a href="about.html" class="block text-sm" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" class="block text-sm">FAQ</a>
+            <a href="terms.html" class="block text-sm" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" class="block text-sm" x-text="t[lang].menuPrivacy"></a>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8" x-text="t[lang].heroTitle"></h1>
+            <p class="text-xl text-gray-500 mb-12" x-text="t[lang].heroSub"></p>
+            <div class="flex flex-wrap justify-center gap-5">
+                <a href="#" class="bg-black text-white px-8 py-3 rounded-2xl flex items-center btn-apple">
+                    <i class="fab fa-apple text-2xl mr-3"></i> <span>App Store</span>
+                </a>
+                <a href="#" class="bg-black text-white px-8 py-3 rounded-2xl flex items-center btn-apple">
+                    <i class="fab fa-google-play text-2xl mr-3"></i> <span>Google Play</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+            <template x-for="feature in t[lang].features">
+                <div class="p-10 rounded-[2.5rem] bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-gray-100">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600">
+                        <i :class="feature.icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" x-text="feature.title"></h3>
+                    <p class="text-gray-500 text-sm" x-text="feature.desc"></p>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <footer class="py-16 text-center text-gray-400 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-8 flex justify-center space-x-6 text-[11px] font-bold uppercase tracking-widest">
+                <a href="about.html" x-text="t[lang].menuAbout"></a>
+                <a href="faq.html">FAQ</a>
+                <a href="terms.html" x-text="t[lang].menuTerms"></a>
+                <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
+            </div>
+            <p class="text-xs">&copy; 2026 Tiyn Zaytun LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function localizer() {
+            return {
+                lang: 'uz',
+                t: {
+                    uz: {
+                        menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik',
+                        heroTitle: 'Vaqt - sizning eng katta boyligingiz.',
+                        heroSub: 'Navbat-Ol bilan kutishni to\'xtating. Xizmatlarni masofadan band qiling.',
+                        features: [
+                            { icon: 'fas fa-clock', title: 'Vaqtni tejash', desc: 'Sartaroshxona yoki stomatologiyada soatlab kutishga chek qo\'ying.' },
+                            { icon: 'fas fa-mobile-alt', title: 'Oson interfeys', desc: 'Bir necha marta bosish orqali istalgan joydan navbat oling.' },
+                            { icon: 'fas fa-smile', title: 'Stressiz hayot', desc: 'Kutish stressidan xalos bo\'ling va unumdorlikni oshiring.' }
+                        ]
+                    },
+                    // Boshqa tillar shu yerga qo'shiladi...
+                    ru: { menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Приватность', heroTitle: 'Время — ваш самый ценный актив.', heroSub: 'Перестаньте ждать с Navbat-Ol. Бронируйте услуги удаленно.' }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
