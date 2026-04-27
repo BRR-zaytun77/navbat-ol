@@ -158,42 +158,106 @@
 
     <script>
         function localizer() {
+            // 1. LocalStorage'dan tanlangan tilni tekshiramiz
+            // Agar xotira bo'sh bo'lsa, standart til sifatida 'uz' ni oladi
+            const selectedLang = localStorage.getItem('user_lang') || 'uz';
             return {
-                lang: 'uz',
+                lang: selectedLang,
+                // Til o'zgarganda xotiraga saqlash funksiyasi
+                init() {
+                    this.$watch('lang', (val) => {
+                        localStorage.setItem('selected_language', val);
+                    });
+                },
                 t: {
                     uz: {
-                        menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik',
+                        menuFeatures: 'Imkoniyatlar', 
+                        menuAbout: 'Loyiha haqida', 
+                        menuTerms: 'Shartlar', 
+                        menuPrivacy: 'Maxfiylik',
                         aboutHeader: 'Navbat-Ol — Vaqt qadri uchun',
                         aboutSub: 'Biz navbatda kutishning og\'riqli ekanini tushunamiz. Shuning uchun jamiyat samaradorligini oshirish maqsadida ushbu platformani yaratdik.',
-                        missionTitle: 'Bizning missiyamiz', missionDesc: 'Har bir inson o\'z navbatini masofadan turib boshqarishi va vaqtini oilasi hamda sevimli mashg\'ulotlariga sarflashini ta\'minlash.',
-                        visionTitle: 'Xavfsiz va ishonchli', visionDesc: 'Ma\'lumotlaringiz himoyalangan va xizmat ko\'rsatuvchi shoxobchalar bilan aloqangiz to\'liq shaffof bo\'lishi bizning ustuvor vazifamizdir.',
-                        experienceTitle: 'Professional tajriba', experienceDesc: 'Loyihamiz 18 yillik IT sohasidagi tajribaga ega jamoa tomonidan ishlab chiqilgan va boshqariladi.',
-                        yearsExp: 'Yillik tajriba', safeText: 'Xavfsizlik', footerNote: 'Ushbu loyiha Tiyn Zaytun tomonidan jamiyat baxti va samaradorligi uchun ishlab chiqilgan.'
+                        missionTitle: 'Bizning missiyamiz', 
+                        missionDesc: 'Har bir inson o\'z navbatini masofadan turib boshqarishi va vaqtini oilasi hamda sevimli mashg\'ulotlariga sarflashini ta\'minlash.',
+                        visionTitle: 'Xavfsiz va ishonchli', 
+                        visionDesc: 'Ma\'lumotlaringiz himoyalangan va xizmat ko\'rsatuvchi shoxobchalar bilan aloqangiz to\'liq shaffof bo\'lishi bizning ustuvor vazifamizdir.',
+                        experienceTitle: 'Professional tajriba', 
+                        experienceDesc: 'Loyihamiz 18 yillik IT sohasidagi tajribaga ega jamoa tomonidan ishlab chiqilgan va boshqariladi.',
+                        yearsExp: 'Yillik tajriba', 
+                        safeText: 'Xavfsizlik', 
+                        footerNote: 'Ushbu loyiha Tiyn Zaytun tomonidan jamiyat baxti va samaradorligi uchun ishlab chiqilgan.'
                     },
                     uz_cyr: {
-                        menuFeatures: 'Имкониятлар', menuAbout: 'Лойиҳа ҳақида', menuTerms: 'Шартлар', menuPrivacy: 'Махфийлик',
+                        menuFeatures: 'Имкониятлар', 
+                        menuAbout: 'Лойиҳа ҳақида', 
+                        menuTerms: 'Шартлар', 
+                        menuPrivacy: 'Махфийлик',
                         aboutHeader: 'Навбат-Ол — Вақт қадри учун',
-                        aboutSub: 'Биз навбатда кутишнинг оғриқли эканини тушунамиз. Шунинг учун ушбу платформани яратдик.',
-                        missionTitle: 'Миссиямиз', missionDesc: 'Ҳар бир инсон ўз навбатини масофадан туриб бошқаришини таъминлаш.',
-                        experienceTitle: 'Профессионал тажриба', yearsExp: 'Йиллик тажриба'
+                        aboutSub: 'Биз навбатда кутишнинг оғриқли эканини тушунамиз. Шунинг учун жамият самарадорлигини ошириш мақсадида ушбу платформани яратдик.',
+                        missionTitle: 'Бизнинг миссиямиз', 
+                        missionDesc: 'Ҳар бир инсон ўз навбатини масофадан туриб бошқариши ва вақтини оиласи ҳамда севимли машғулотларига сарфлашини таъминлаш.',
+                        visionTitle: 'Хавфсиз ва ишончли', 
+                        visionDesc: 'Маълумотларингиз ҳимояланган ва хизмат кўрсатувчи шохобчалар билан алоқангиз тўлиқ шаффоф бўлиши бизнинг устувор вазифамиздир.',
+                        experienceTitle: 'Профессионал тажриба', 
+                        experienceDesc: 'Лойиҳамиз 18 йиллик IT соҳасидаги тажрибага эга жамоа томонидан ишлаб чиқилган ва бошқарилади.',
+                        yearsExp: 'Йиллик тажриба', 
+                        safeText: 'Хавфсизлик', 
+                        footerNote: 'Ушбу лойиҳа Tiyn Zaytun томонидан жамият бахти ва самарадорлиги учун ишлаб чиқилган.'
                     },
                     ru: {
-                        menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Приватность',
+                        menuFeatures: 'Возможности', 
+                        menuAbout: 'О проекте', 
+                        menuTerms: 'Условия', 
+                        menuPrivacy: 'Конфиденциальность',
                         aboutHeader: 'Navbat-Ol — Цените свое время',
-                        aboutSub: 'Мы понимаем, насколько утомительно ждать в очередях. Поэтому мы создали эту платформу для повышения эффективности общества.',
-                        missionTitle: 'Наша миссия', missionDesc: 'Дать возможность каждому управлять своей очередью удаленно и тратить время на семью и хобби.',
-                        experienceTitle: 'Профессиональный опыт', yearsExp: 'Лет опыта'
+                        aboutSub: 'Мы знаем, как утомительно стоять в очередях. Наша платформа создана для повышения эффективности и комфорта вашего общества.',
+                        missionTitle: 'Наша миссия', 
+                        missionDesc: 'Предоставить каждому возможность управлять своим временем удаленно, посвящая его семье и любимым делам.',
+                        visionTitle: 'Безопасность и доверие', 
+                        visionDesc: 'Защита ваших данных и полная прозрачность взаимодействия с сервисными центрами — наш главный приоритет.',
+                        experienceTitle: 'Профессиональный опыт', 
+                        experienceDesc: 'Проект разработан и управляется командой с 18-летним опытом в сфере IT-технологий.',
+                        yearsExp: 'Лет опыта', 
+                        safeText: 'Безопасность', 
+                        footerNote: 'Этот проект разработан Tiyn Zaytun для благополучия и эффективности общества.'
                     },
                     en: {
-                        menuFeatures: 'Features', menuAbout: 'About', menuTerms: 'Terms', menuPrivacy: 'Privacy',
-                        aboutHeader: 'Navbat-Ol — Value your time',
-                        aboutSub: 'We understand that waiting in lines is painful. That is why we built this platform to increase society\'s efficiency.',
-                        missionTitle: 'Our Mission', missionDesc: 'To empower everyone to manage their turn remotely and spend time on family and hobbies.',
-                        experienceTitle: 'Professional Experience', yearsExp: 'Years of Experience'
+                        menuFeatures: 'Features', 
+                        menuAbout: 'About Project', 
+                        menuTerms: 'Terms', 
+                        menuPrivacy: 'Privacy',
+                        aboutHeader: 'Navbat-Ol — Value Your Time',
+                        aboutSub: 'We understand that waiting in lines is frustrating. We built this platform to boost social efficiency and simplify your life.',
+                        missionTitle: 'Our Mission', 
+                        missionDesc: 'To empower everyone to manage their appointments remotely, saving time for family and hobbies.',
+                        visionTitle: 'Secure & Reliable', 
+                        visionDesc: 'Protecting your data and ensuring transparent communication with service providers is our top priority.',
+                        experienceTitle: 'Professional Experience', 
+                        experienceDesc: 'Our project is developed and managed by a team with 18 years of expertise in the IT industry.',
+                        yearsExp: 'Years of Experience', 
+                        safeText: 'Security', 
+                        footerNote: 'This project was developed by Tiyn Zaytun for social happiness and efficiency.'
+                    },
+                    ar: {
+                        menuFeatures: 'المميزات', 
+                        menuAbout: 'حول المشروع', 
+                        menuTerms: 'الشروط', 
+                        menuPrivacy: 'الخصوصية',
+                        aboutHeader: 'Navbat-Ol — وقتك ثمين',
+                        aboutSub: 'نحن ندرك مدى إرهاق الانتظار في الطوابير. لذلك أنشأنا هذه المنصة لزيادة كفاءة المجتمع وراحتكم.',
+                        missionTitle: 'مهمتنا', 
+                        missionDesc: 'تمكين الجميع من إدارة دورهم عن بُعد وقضاء وقتهم مع العائلة وفي ممارسة هواياتهم المفضلة.',
+                        visionTitle: 'آمن وموثوق', 
+                        visionDesc: 'حماية بياناتكم وضمان شفافية التواصل مع مقدمي الخدمات هي أولويتنا القصوى.',
+                        experienceTitle: 'خبرة احترافية', 
+                        experienceDesc: 'تم تطوير وإدارة مشروعنا من قبل فريق يتمتع بخبرة 18 عاماً في مجال تكنولوجيا المعلومات.',
+                        yearsExp: 'سنوات الخبرة', 
+                        safeText: 'الأمان', 
+                        footerNote: 'تم تطوير هذا المشروع من قبل Tiyn Zaytun من أجل سعادة المجتمع وكفاءته.'
                     }
                 }
-            }
-        }
+            };
+}
     </script>
 </body>
 </html>
