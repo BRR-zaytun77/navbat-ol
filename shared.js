@@ -1,0 +1,345 @@
+function localizer(activePage) {
+    return {
+        lang: localStorage.getItem('navbat_lang') || 'uz',
+        activePage: activePage || 'home',
+        mobileMenuOpen: false,
+
+        init() {
+            this.$watch('lang', val => {
+                localStorage.setItem('navbat_lang', val);
+                document.documentElement.dir = val === 'ar' ? 'rtl' : 'ltr';
+                document.documentElement.lang = val === 'uz_cyr' ? 'uz' : val;
+            });
+            const saved = localStorage.getItem('navbat_lang') || 'uz';
+            this.lang = saved;
+            document.documentElement.dir = saved === 'ar' ? 'rtl' : 'ltr';
+        },
+
+        t: {
+            uz: {
+                menuFeatures: 'Imkoniyatlar',
+                menuAbout: 'Loyiha haqida',
+                menuFaq: 'Savol-javob',
+                menuTerms: 'Shartlar',
+                menuPrivacy: 'Maxfiylik',
+                downloadBtn: 'Yuklab olish',
+
+                heroTitle: 'Vaqt — sizning eng katta boyligingiz.',
+                heroSub: "Navbat-Ol bilan kutishni to'xtating. Xizmatlarni masofadan band qiling va hayotingizdan zavqlaning.",
+
+                contactTitle: "Bog'lanish",
+                footerNote: 'Ushbu loyiha Tiyn Zaytun tomonidan jamiyat baxti va samaradorligi uchun ishlab chiqilgan.',
+                footerRights: 'Barcha huquqlar himoyalangan.',
+
+                features: [
+                    { icon: 'fas fa-clock', title: 'Vaqtni tejash', desc: "Sartaroshxona yoki stomatologiyada soatlab kutishga chek qo'ying." },
+                    { icon: 'fas fa-mobile-alt', title: 'Oson interfeys', desc: 'Bir necha marta bosish orqali istalgan joydan navbat oling.' },
+                    { icon: 'fas fa-smile', title: 'Stressiz hayot', desc: "Kutish stressidan xalos bo'ling va unumdorlikni oshiring." }
+                ],
+
+                aboutTitle: 'Loyiha haqida',
+                aboutMission: 'Bizning maqsadimiz',
+                aboutMissionText: "Navbat-Ol O'zbekistonda navbat kutish muammosini hal qilish uchun tug'ildi. Har kuni millionlab odamlar klinikalarda, sartaroshxonalarda va davlat idoralarida soatlab vaqtini yo'qotadi. Biz bu muammoni texnologiya yordamida bartaraf etishni maqsad qilib qo'ydik.",
+                aboutVision: 'Bizning ko\'rinishimiz',
+                aboutVisionText: "2030 yilga kelib O'zbekistondagi barcha xizmat ko'rsatish nuqtalarini raqamlashtirish va har bir fuqaroning vaqtini tejashga hissa qo'shish.",
+                aboutTeam: 'Jamoa',
+                aboutTeamText: "Biz Tiyn Zaytun LLC qoshidagi ambitsiyali yoshlar jamoasimiz. Maqsadimiz — oddiy texnologiya orqali katta muammolarni hal qilish.",
+                aboutValues: [
+                    { icon: 'fas fa-heart', title: 'Insonparvarlik', desc: "Har bir foydalanuvchining vaqti va qulayligi biz uchun muhim." },
+                    { icon: 'fas fa-bolt', title: 'Samaradorlik', desc: "Sodda, tez va ishonchli yechimlar yaratamiz." },
+                    { icon: 'fas fa-globe', title: 'Inklyuzivlik', desc: "5 tilda xizmat — har bir O'zbek fuqarosi uchun." }
+                ],
+
+                faqTitle: 'Ko\'p so\'raladigan savollar',
+                faqSubtitle: "Savolingiz javobini topa olmadingizmi? Bizga murojaat qiling.",
+                faqs: [
+                    { q: 'Navbat-Ol ilovasi bepulmi?', a: "Ha, asosiy xususiyatlar foydalanuvchilar uchun mutlaqo bepul. Premium imkoniyatlar kelajakda taqdim etiladi." },
+                    { q: 'Qaysi xizmatlar uchun navbat olish mumkin?', a: "Tibbiyot markazlari, stomatologiyalar, sartaroshxonalar, go'zallik salonlari, davlat idoralari va ko'plab boshqa joylar." },
+                    { q: 'Navbatimni bekor qilsam nima bo'ladi?', a: "Navbatni istalgan vaqtda bekor qilish mumkin. Xizmat ko'rsatuvchi tomon ham xabardor qilinadi." },
+                    { q: 'Ilova iOS va Android qurilmalarda ishlaydi?', a: "Ha, ilova App Store va Google Play'da mavjud. Har ikkala tizim uchun to'liq qo'llab-quvvatlash ta'minlangan." },
+                    { q: 'Ma\'lumotlarim xavfsizmi?', a: "Barcha shaxsiy ma'lumotlar shifrlangan va maxfiylik siyosatimizga muvofiq saqlanadi." },
+                    { q: 'Biznesim uchun qanday ulana olaman?', a: "Biznes egasi sifatida ro'yxatdan o'tish uchun Telegram botimizga murojaat qiling yoki biz bilan bog'laning." }
+                ],
+
+                privacyTitle: 'Maxfiylik siyosati',
+                privacyDate: 'Oxirgi yangilanish: 1 yanvar 2026',
+                privacySections: [
+                    { title: 'Qanday ma\'lumotlar yig\'iladi?', body: "Ro'yxatdan o'tish paytida ism, telefon raqami va email manzil. Ilovadan foydalanish chog'ida qurilma ma'lumotlari va foydalanish statistikasi." },
+                    { title: 'Ma\'lumotlar qanday ishlatiladi?', body: "Ma'lumotlar faqat xizmat ko'rsatish, navbat boshqarish va foydalanuvchi tajribasini yaxshilash maqsadida ishlatiladi. Biz ma'lumotlaringizni uchinchi shaxslarga sotmaymiz." },
+                    { title: 'Cookie fayllar', body: "Saytimiz foydalanish statistikasini yig'ish va til sozlamalarini saqlash uchun cookie fayllardan foydalanadi." },
+                    { title: 'Ma\'lumotlarni o\'chirish', body: "Ilovani o'chirganingizdan so'ng barcha shaxsiy ma'lumotlaringizni o'chirishni so'rashingiz mumkin. Buning uchun support botimizga murojaat qiling." }
+                ],
+
+                termsTitle: 'Foydalanish shartlari',
+                termsDate: 'Oxirgi yangilanish: 1 yanvar 2026',
+                termsSections: [
+                    { title: 'Umumiy qoidalar', body: "Navbat-Ol ilovasidan foydalanish orqali siz ushbu shartlarga rozilik bildirasiz. Agar siz 18 yoshdan kichik bo'lsangiz, ota-onangiz yoki qonuniy vakilingizning roziligi talab etiladi." },
+                    { title: 'Foydalanuvchi majburiyatlari', body: "Foydalanuvchi aniq va to'g'ri ma'lumot kiritishi, navbatni o'z vaqtida bekor qilishi va ilovani qonuniy maqsadlarda ishlatishi shart." },
+                    { title: 'Xizmat ko'rsatuvchi majburiyatlari', body: "Biznes egasi ro'yxatdan o'tgan xizmatlarni bajarishga, navbat ma'lumotlarini to'g'ri saqlashga va foydalanuvchi ma'lumotlarini himoya qilishga majbur." },
+                    { title: 'Mas\'uliyat chegarasi', body: "Navbat-Ol xizmat ko'rsatuvchi va foydalanuvchi o'rtasidagi vositachi sifatida ishlaydi. Xizmat sifati uchun bevosita mas'uliyat ko'tarmaymiz." },
+                    { title: 'Shartlarni o\'zgartirish', body: "Biz ushbu shartlarni istalgan vaqtda o'zgartirish huquqini saqlaymiz. O'zgartirishlar ilovada e'lon qilinadi." }
+                ]
+            },
+
+            uz_cyr: {
+                menuFeatures: 'Имкониятлар',
+                menuAbout: 'Лойиҳа ҳақида',
+                menuFaq: 'Савол-жавоб',
+                menuTerms: 'Шартлар',
+                menuPrivacy: 'Махфийлик',
+                downloadBtn: 'Юклаб олиш',
+
+                heroTitle: 'Вақт — сизнинг энг катта бойлигингиз.',
+                heroSub: 'Навбат-Ол билан кутишни тўхтатинг. Хизматларни масофадан банд қилинг ва ҳаётингиздан завқланинг.',
+
+                contactTitle: 'Боғланиш',
+                footerNote: 'Ушбу лойиҳа Tiyn Zaytun томонидан жамият бахти ва самарадорлиги учун ишлаб чиқилган.',
+                footerRights: 'Барча ҳуқуқлар ҳимояланган.',
+
+                features: [
+                    { icon: 'fas fa-clock', title: 'Вақтни тежаш', desc: 'Сартарошхона ёки стоматологияда соатлаб кутишга чек қўйинг.' },
+                    { icon: 'fas fa-mobile-alt', title: 'Осон интерфейс', desc: 'Бир неча марта босиш орқали исталган жойдан навбат олинг.' },
+                    { icon: 'fas fa-smile', title: 'Стрессиз ҳаёт', desc: 'Кутиш стрессидан халос бўлинг ва унумдорликни оширинг.' }
+                ],
+
+                aboutTitle: 'Лойиҳа ҳақида',
+                aboutMission: 'Бизнинг мақсадимиз',
+                aboutMissionText: 'Навбат-Ол Ўзбекистонда навбат кутиш муаммосини ҳал қилиш учун туғилди. Ҳар куни миллионлаб одамлар клиникаларда, сартарошхоналарда ва давлат идораларида соатлаб вақтини йўқотади.',
+                aboutVision: 'Бизнинг кўринишимиз',
+                aboutVisionText: '2030 йилга келиб Ўзбекистондаги барча хизмат кўрсатиш нуқталарини рақамлаштириш.',
+                aboutTeam: 'Жамоа',
+                aboutTeamText: 'Биз Tiyn Zaytun LLC қошидаги амбициявий ёшлар жамоасимиз.',
+                aboutValues: [
+                    { icon: 'fas fa-heart', title: 'Инсонпарварлик', desc: 'Ҳар бир фойдаланувчининг вақти ва қулайлиги биз учун муҳим.' },
+                    { icon: 'fas fa-bolt', title: 'Самарадорлик', desc: 'Содда, тез ва ишончли ечимлар яратамиз.' },
+                    { icon: 'fas fa-globe', title: 'Инклюзивлик', desc: '5 тилда хизмат — ҳар бир Ўзбек фуқароси учун.' }
+                ],
+
+                faqTitle: 'Кўп сўраладиган саволлар',
+                faqSubtitle: 'Саволингиз жавобини топа олмадингизми? Бизга мурожаат қилинг.',
+                faqs: [
+                    { q: 'Навбат-Ол иловаси бепулми?', a: 'Ҳа, асосий хусусиятлар фойдаланувчилар учун мутлақо бепул.' },
+                    { q: 'Қайси хизматлар учун навбат олиш мумкин?', a: 'Тиббиёт марказлари, стоматологиялар, сартарошхоналар, гўзаллик салонлари ва кўплаб бошқа жойлар.' },
+                    { q: 'Навбатимни бекор қилсам нима бўлади?', a: 'Навбатни исталган вақтда бекор қилиш мумкин. Хизмат кўрсатувчи тараф ҳам хабардор қилинади.' },
+                    { q: 'Илова iOS ва Android қурилмаларда ишлайди?', a: 'Ҳа, илова App Store ва Google Playда мавжуд.' },
+                    { q: 'Маълумотларим хавфсизми?', a: 'Барча шахсий маълумотлар шифрланган ва махфийлик сиёсатимизга мувофиқ сақланади.' },
+                    { q: 'Бизнесим учун қандай улана оламан?', a: 'Бизнес эгаси сифатида рўйхатдан ўтиш учун Telegram ботимизга мурожаат қилинг.' }
+                ],
+
+                privacyTitle: 'Махфийлик сиёсати',
+                privacyDate: 'Охирги янгиланиш: 1 январ 2026',
+                privacySections: [
+                    { title: 'Қандай маълумотлар йиғилади?', body: 'Рўйхатдан ўтиш пайтида исм, телефон рақами ва email манзил.' },
+                    { title: 'Маълумотлар қандай ишлатилади?', body: 'Маълумотлар фақат хизмат кўрсатиш ва навбат бошқариш мақсадида ишлатилади.' },
+                    { title: 'Cookie файллар', body: 'Сайтимиз фойдаланиш статистикасини йиғиш учун cookie файллардан фойдаланади.' },
+                    { title: 'Маълумотларни ўчириш', body: 'Иловани ўчирганингиздан сўнг барча шахсий маълумотларингизни ўчиришни сўрашингиз мумкин.' }
+                ],
+
+                termsTitle: 'Фойдаланиш шартлари',
+                termsDate: 'Охирги янгиланиш: 1 январ 2026',
+                termsSections: [
+                    { title: 'Умумий қоидалар', body: 'Навбат-Ол иловасидан фойдаланиш орқали сиз ушбу шартларга розилик билдирасиз.' },
+                    { title: 'Фойдаланувчи мажбуриятлари', body: 'Фойдаланувчи аниқ ва тўғри маълумот киритиши, навбатни ўз вақтида бекор қилиши шарт.' },
+                    { title: 'Хизмат кўрсатувчи мажбуриятлари', body: 'Бизнес эгаси рўйхатдан ўтган хизматларни бажаришга ва фойдаланувчи маълумотларини ҳимоя қилишга мажбур.' },
+                    { title: 'Масъулият чегараси', body: 'Навбат-Ол хизмат кўрсатувчи ва фойдаланувчи ўртасидаги воситачи сифатида ишлайди.' },
+                    { title: 'Шартларни ўзгартириш', body: 'Биз ушбу шартларни исталган вақтда ўзгартириш ҳуқуқини сақлаймиз.' }
+                ]
+            },
+
+            ru: {
+                menuFeatures: 'Возможности',
+                menuAbout: 'О проекте',
+                menuFaq: 'FAQ',
+                menuTerms: 'Условия',
+                menuPrivacy: 'Конфиденциальность',
+                downloadBtn: 'Скачать сейчас',
+
+                heroTitle: 'Время — ваш самый ценный актив.',
+                heroSub: 'Перестаньте ждать с Navbat-Ol. Бронируйте услуги удаленно и наслаждайтесь каждой минутой.',
+
+                contactTitle: 'Связаться с нами',
+                footerNote: 'Этот проект разработан Tiyn Zaytun для благополучия и эффективности общества.',
+                footerRights: 'Все права защищены.',
+
+                features: [
+                    { icon: 'fas fa-clock', title: 'Экономия времени', desc: 'Забудьте о многочасовых очередях в клиниках или салонах.' },
+                    { icon: 'fas fa-mobile-alt', title: 'Простой интерфейс', desc: 'Занимайте очередь в пару кликов из любого места.' },
+                    { icon: 'fas fa-smile', title: 'Жизнь без стресса', desc: 'Избавьтесь от стресса ожидания и будьте продуктивны.' }
+                ],
+
+                aboutTitle: 'О проекте',
+                aboutMission: 'Наша миссия',
+                aboutMissionText: 'Navbat-Ol родился, чтобы решить проблему очередей в Узбекистане. Каждый день миллионы людей теряют часы в клиниках, парикмахерских и государственных учреждениях. Мы решаем эту проблему с помощью технологий.',
+                aboutVision: 'Наше видение',
+                aboutVisionText: 'К 2030 году оцифровать все точки обслуживания в Узбекистане и сэкономить время каждого гражданина.',
+                aboutTeam: 'Команда',
+                aboutTeamText: 'Мы — команда амбициозных молодых людей в составе Tiyn Zaytun LLC.',
+                aboutValues: [
+                    { icon: 'fas fa-heart', title: 'Человечность', desc: 'Время и удобство каждого пользователя важны для нас.' },
+                    { icon: 'fas fa-bolt', title: 'Эффективность', desc: 'Создаём простые, быстрые и надёжные решения.' },
+                    { icon: 'fas fa-globe', title: 'Инклюзивность', desc: 'Сервис на 5 языках — для каждого гражданина.' }
+                ],
+
+                faqTitle: 'Часто задаваемые вопросы',
+                faqSubtitle: 'Не нашли ответ? Свяжитесь с нами.',
+                faqs: [
+                    { q: 'Приложение Navbat-Ol бесплатное?', a: 'Да, основные функции абсолютно бесплатны для пользователей.' },
+                    { q: 'Для каких услуг можно записаться?', a: 'Медицинские центры, стоматологии, парикмахерские, салоны красоты, государственные учреждения и многое другое.' },
+                    { q: 'Что будет, если я отменю запись?', a: 'Вы можете отменить запись в любое время. Поставщик услуг также будет уведомлён.' },
+                    { q: 'Работает ли приложение на iOS и Android?', a: 'Да, приложение доступно в App Store и Google Play.' },
+                    { q: 'Мои данные в безопасности?', a: 'Все персональные данные зашифрованы и хранятся в соответствии с нашей политикой конфиденциальности.' },
+                    { q: 'Как подключить мой бизнес?', a: 'Для регистрации как владелец бизнеса свяжитесь с нами через Telegram-бот.' }
+                ],
+
+                privacyTitle: 'Политика конфиденциальности',
+                privacyDate: 'Последнее обновление: 1 января 2026',
+                privacySections: [
+                    { title: 'Какие данные собираются?', body: 'При регистрации: имя, номер телефона и адрес электронной почты. При использовании: данные устройства и статистика использования.' },
+                    { title: 'Как используются данные?', body: 'Данные используются исключительно для предоставления услуг и улучшения пользовательского опыта. Мы не продаём ваши данные третьим лицам.' },
+                    { title: 'Файлы cookie', body: 'Наш сайт использует файлы cookie для сбора статистики и сохранения языковых настроек.' },
+                    { title: 'Удаление данных', body: 'Вы можете запросить удаление всех ваших данных после удаления приложения через наш бот поддержки.' }
+                ],
+
+                termsTitle: 'Условия использования',
+                termsDate: 'Последнее обновление: 1 января 2026',
+                termsSections: [
+                    { title: 'Общие положения', body: 'Используя приложение Navbat-Ol, вы соглашаетесь с настоящими условиями. Если вам нет 18 лет, требуется согласие родителей.' },
+                    { title: 'Обязанности пользователя', body: 'Пользователь обязан вводить точные данные, своевременно отменять записи и использовать приложение в законных целях.' },
+                    { title: 'Обязанности поставщика услуг', body: 'Владелец бизнеса обязан выполнять зарегистрированные услуги и защищать данные пользователей.' },
+                    { title: 'Ограничение ответственности', body: 'Navbat-Ol действует как посредник между поставщиком и пользователем. Мы не несём прямой ответственности за качество услуг.' },
+                    { title: 'Изменение условий', body: 'Мы оставляем за собой право изменять настоящие условия в любое время с уведомлением в приложении.' }
+                ]
+            },
+
+            en: {
+                menuFeatures: 'Features',
+                menuAbout: 'About',
+                menuFaq: 'FAQ',
+                menuTerms: 'Terms',
+                menuPrivacy: 'Privacy',
+                downloadBtn: 'Download Now',
+
+                heroTitle: 'Time is your most valuable asset.',
+                heroSub: 'Stop waiting with Navbat-Ol. Book services remotely and make every minute count.',
+
+                contactTitle: 'Get in Touch',
+                footerNote: 'This project is developed by Tiyn Zaytun for the happiness and efficiency of society.',
+                footerRights: 'All rights reserved.',
+
+                features: [
+                    { icon: 'fas fa-clock', title: 'Save Time', desc: 'End the hours of waiting at dentist or barber shops.' },
+                    { icon: 'fas fa-mobile-alt', title: 'Easy Interface', desc: 'Take your turn from anywhere with just a few clicks.' },
+                    { icon: 'fas fa-smile', title: 'Stress-free Life', desc: 'Free yourself from waiting stress and boost your productivity.' }
+                ],
+
+                aboutTitle: 'About the Project',
+                aboutMission: 'Our Mission',
+                aboutMissionText: 'Navbat-Ol was born to solve the queue problem in Uzbekistan. Every day, millions of people lose hours waiting in clinics, barbershops, and government offices. We set out to eliminate this with technology.',
+                aboutVision: 'Our Vision',
+                aboutVisionText: 'By 2030, digitize every service point in Uzbekistan and save time for every citizen.',
+                aboutTeam: 'Our Team',
+                aboutTeamText: 'We are a team of ambitious young builders at Tiyn Zaytun LLC, solving real problems with simple technology.',
+                aboutValues: [
+                    { icon: 'fas fa-heart', title: 'Human-first', desc: "Every user's time and comfort matters deeply to us." },
+                    { icon: 'fas fa-bolt', title: 'Efficiency', desc: 'We build simple, fast, and reliable solutions.' },
+                    { icon: 'fas fa-globe', title: 'Inclusivity', desc: 'Service in 5 languages — for every citizen.' }
+                ],
+
+                faqTitle: 'Frequently Asked Questions',
+                faqSubtitle: "Can't find your answer? Reach out to us.",
+                faqs: [
+                    { q: 'Is Navbat-Ol free to use?', a: 'Yes, core features are completely free for users. Premium features may be introduced in the future.' },
+                    { q: 'Which services can I book?', a: 'Medical centers, dentists, barbershops, beauty salons, government offices, and many more.' },
+                    { q: 'What happens if I cancel my booking?', a: 'You can cancel anytime. The service provider will also be notified automatically.' },
+                    { q: 'Does the app work on iOS and Android?', a: 'Yes, it is available on both App Store and Google Play with full support for both platforms.' },
+                    { q: 'Is my data safe?', a: 'All personal data is encrypted and stored according to our privacy policy.' },
+                    { q: 'How can I register my business?', a: 'Contact our Telegram support bot to register as a business owner.' }
+                ],
+
+                privacyTitle: 'Privacy Policy',
+                privacyDate: 'Last updated: January 1, 2026',
+                privacySections: [
+                    { title: 'What data is collected?', body: 'During registration: name, phone number, and email address. During use: device information and usage statistics.' },
+                    { title: 'How is data used?', body: 'Data is used solely to provide services and improve user experience. We never sell your data to third parties.' },
+                    { title: 'Cookies', body: 'Our site uses cookies to collect usage statistics and save language preferences.' },
+                    { title: 'Data deletion', body: 'After deleting the app, you can request deletion of all your personal data through our support bot.' }
+                ],
+
+                termsTitle: 'Terms & Conditions',
+                termsDate: 'Last updated: January 1, 2026',
+                termsSections: [
+                    { title: 'General Terms', body: 'By using Navbat-Ol, you agree to these terms. If you are under 18, parental consent is required.' },
+                    { title: 'User Responsibilities', body: 'Users must enter accurate information, cancel bookings in time, and use the app for lawful purposes only.' },
+                    { title: 'Service Provider Responsibilities', body: 'Business owners are obligated to fulfill registered services and protect user data.' },
+                    { title: 'Limitation of Liability', body: 'Navbat-Ol acts as an intermediary between providers and users. We do not bear direct responsibility for service quality.' },
+                    { title: 'Changes to Terms', body: 'We reserve the right to modify these terms at any time, with notice provided within the app.' }
+                ]
+            },
+
+            ar: {
+                menuFeatures: 'المميزات',
+                menuAbout: 'عن المشروع',
+                menuFaq: 'الأسئلة الشائعة',
+                menuTerms: 'الشروط',
+                menuPrivacy: 'الخصوصية',
+                downloadBtn: 'تحميل الآن',
+
+                heroTitle: 'الوقت هو أغلى ما تملك.',
+                heroSub: 'توقف عن الانتظار مع Navbat-Ol. احجز الخدمات عن بُعد واستمتع بحياتك.',
+
+                contactTitle: 'اتصل بنا',
+                footerNote: 'تم تطوير هذا المشروع بواسطة Tiyn Zaytun من أجل سعادة وكفاءة المجتمع.',
+                footerRights: 'جميع الحقوق محفوظة.',
+
+                features: [
+                    { icon: 'fas fa-clock', title: 'توفير الوقت', desc: 'ضع حداً لساعات الانتظار في العيادات أو الصالونات.' },
+                    { icon: 'fas fa-mobile-alt', title: 'واجهة سهلة', desc: 'احجز دورك من أي مكان ببضع نقرات فقط.' },
+                    { icon: 'fas fa-smile', title: 'حياة بلا توتر', desc: 'تخلص من توتر الانتظار وزد من إنتاجيتك.' }
+                ],
+
+                aboutTitle: 'عن المشروع',
+                aboutMission: 'مهمتنا',
+                aboutMissionText: 'وُلد Navbat-Ol لحل مشكلة الطوابير في أوزبكستان. كل يوم، يضيع الملايين ساعات في انتظار دورهم في العيادات ومحلات الحلاقة والدوائر الحكومية.',
+                aboutVision: 'رؤيتنا',
+                aboutVisionText: 'بحلول عام 2030، رقمنة جميع نقاط الخدمة في أوزبكستان وتوفير وقت كل مواطن.',
+                aboutTeam: 'فريقنا',
+                aboutTeamText: 'نحن فريق من الشباب الطموح في Tiyn Zaytun LLC نحل مشاكل حقيقية بتكنولوجيا بسيطة.',
+                aboutValues: [
+                    { icon: 'fas fa-heart', title: 'الإنسانية أولاً', desc: 'وقت كل مستخدم وراحته يهمنا كثيراً.' },
+                    { icon: 'fas fa-bolt', title: 'الكفاءة', desc: 'نبني حلولاً بسيطة وسريعة وموثوقة.' },
+                    { icon: 'fas fa-globe', title: 'الشمولية', desc: 'خدمة بـ5 لغات — لكل مواطن.' }
+                ],
+
+                faqTitle: 'الأسئلة الشائعة',
+                faqSubtitle: 'لم تجد إجابتك؟ تواصل معنا.',
+                faqs: [
+                    { q: 'هل تطبيق Navbat-Ol مجاني؟', a: 'نعم، الميزات الأساسية مجانية تماماً للمستخدمين.' },
+                    { q: 'ما الخدمات التي يمكن حجزها؟', a: 'المراكز الطبية، أطباء الأسنان، الحلاقين، صالونات التجميل، الدوائر الحكومية والمزيد.' },
+                    { q: 'ماذا يحدث إن ألغيت حجزي؟', a: 'يمكنك الإلغاء في أي وقت وسيتم إخطار مزود الخدمة تلقائياً.' },
+                    { q: 'هل التطبيق يعمل على iOS وAndroid؟', a: 'نعم، متاح في App Store وGoogle Play مع دعم كامل للمنصتين.' },
+                    { q: 'هل بياناتي آمنة؟', a: 'جميع البيانات الشخصية مشفرة ومخزنة وفق سياسة الخصوصية.' },
+                    { q: 'كيف أسجل نشاطي التجاري؟', a: 'تواصل مع بوت الدعم على تيليغرام للتسجيل كمالك نشاط تجاري.' }
+                ],
+
+                privacyTitle: 'سياسة الخصوصية',
+                privacyDate: 'آخر تحديث: 1 يناير 2026',
+                privacySections: [
+                    { title: 'ما البيانات التي يتم جمعها؟', body: 'عند التسجيل: الاسم ورقم الهاتف والبريد الإلكتروني. أثناء الاستخدام: معلومات الجهاز وإحصاءات الاستخدام.' },
+                    { title: 'كيف تُستخدم البيانات؟', body: 'تُستخدم البيانات فقط لتقديم الخدمات وتحسين تجربة المستخدم. نحن لا نبيع بياناتك لأطراف ثالثة.' },
+                    { title: 'ملفات تعريف الارتباط', body: 'يستخدم موقعنا ملفات تعريف الارتباط لجمع إحصاءات الاستخدام وحفظ تفضيلات اللغة.' },
+                    { title: 'حذف البيانات', body: 'بعد حذف التطبيق، يمكنك طلب حذف جميع بياناتك الشخصية عبر بوت الدعم.' }
+                ],
+
+                termsTitle: 'الشروط والأحكام',
+                termsDate: 'آخر تحديث: 1 يناير 2026',
+                termsSections: [
+                    { title: 'الأحكام العامة', body: 'باستخدام تطبيق Navbat-Ol، فإنك توافق على هذه الشروط. إذا كان عمرك أقل من 18 عاماً، فيلزم موافقة الوالدين.' },
+                    { title: 'مسؤوليات المستخدم', body: 'يجب على المستخدم إدخال معلومات دقيقة، وإلغاء الحجوزات في الوقت المناسب، واستخدام التطبيق للأغراض القانونية فقط.' },
+                    { title: 'مسؤوليات مزود الخدمة', body: 'يلتزم صاحب العمل بتقديم الخدمات المسجلة وحماية بيانات المستخدمين.' },
+                    { title: 'حدود المسؤولية', body: 'يعمل Navbat-Ol كوسيط بين مزودي الخدمة والمستخدمين. لا نتحمل مسؤولية مباشرة عن جودة الخدمة.' },
+                    { title: 'تغيير الشروط', body: 'نحتفظ بالحق في تعديل هذه الشروط في أي وقت مع الإشعار داخل التطبيق.' }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Navbat-Ol | FAQ — Ko'p so'raladigan savollar</title>
+    <meta name="description" content="Navbat-Ol haqida tez-tez so'raladigan savollar va javoblar. Frequently asked questions about Navbat-Ol online booking app.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://navbatol.uz/faq.html">
+
+    <meta property="og:title" content="FAQ — Navbat-Ol">
+    <meta property="og:description" content="Answers to the most frequently asked questions about Navbat-Ol.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://navbatol.uz/faq.html">
+
+    <link rel="alternate" hreflang="uz" href="https://navbatol.uz/faq.html">
+    <link rel="alternate" hreflang="ru" href="https://navbatol.uz/faq.html?lang=ru">
+    <link rel="alternate" hreflang="en" href="https://navbatol.uz/faq.html?lang=en">
+    <link rel="alternate" hreflang="ar" href="https://navbatol.uz/faq.html?lang=ar">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "url": "https://navbatol.uz/faq.html",
+      "name": "Navbat-Ol FAQ",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is Navbat-Ol free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, core features are completely free for users." } },
+        { "@type": "Question", "name": "Which services can I book?", "acceptedAnswer": { "@type": "Answer", "text": "Medical centers, dentists, barbershops, beauty salons, and government offices." } },
+        { "@type": "Question", "name": "Can I cancel my booking?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can cancel any time and the provider will be notified automatically." } },
+        { "@type": "Question", "name": "Does Navbat-Ol work on iOS and Android?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, available on App Store and Google Play." } },
+        { "@type": "Question", "name": "Is my data safe?", "acceptedAnswer": { "@type": "Answer", "text": "All personal data is encrypted per our privacy policy." } },
+        { "@type": "Question", "name": "How do I register my business?", "acceptedAnswer": { "@type": "Answer", "text": "Contact our Telegram support bot to register as a business owner." } }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        .faq-subtitle { text-align: center; color: #6b7280; font-size: 15px; margin: -16px 0 40px; }
+
+        .faq-list { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+
+        .faq-item {
+            border: 1px solid #e5e7eb; border-radius: 16px;
+            margin-bottom: 12px; overflow: hidden;
+            background: #fff;
+        }
+        .faq-question {
+            width: 100%; display: flex; align-items: center; justify-content: space-between;
+            padding: 20px 24px; background: none; border: none; cursor: pointer;
+            font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600;
+            color: #111827; text-align: left; gap: 16px;
+        }
+        .faq-question:hover { background: #f9fafb; }
+        .faq-chevron { color: #2563eb; transition: transform .3s; flex-shrink: 0; font-size: 13px; }
+        .faq-answer { padding: 0 24px 20px; color: #6b7280; font-size: 14px; line-height: 1.75; display: none; }
+        .faq-item.open .faq-answer { display: block; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+        .faq-cta { text-align: center; padding: 0 24px 60px; }
+        .faq-cta p { color: #6b7280; margin-bottom: 16px; font-size: 15px; }
+        .faq-cta a {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #2563eb; color: #fff; padding: 12px 28px; border-radius: 999px;
+            text-decoration: none; font-weight: 700; font-size: 14px;
+            transition: background .2s, transform .15s;
+        }
+        .faq-cta a:hover { background: #1d4ed8; transform: scale(1.02); }
+    </style>
+</head>
+<body x-data="{ ...localizer('faq'), openIdx: null }" x-init="init()">
+
+    <!-- NAV -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Navbat<span>-Ol</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#features" x-text="t[lang].menuFeatures"></a></li>
+                <li><a href="about.html" x-text="t[lang].menuAbout"></a></li>
+                <li><a href="faq.html" class="active" x-text="t[lang].menuFaq"></a></li>
+                <li><a href="terms.html" x-text="t[lang].menuTerms"></a></li>
+                <li><a href="privacy.html" x-text="t[lang].menuPrivacy"></a></li>
+            </ul>
+            <div class="nav-right">
+                <select class="lang-select" x-model="lang">
+                    <option value="uz">O'zbek</option>
+                    <option value="uz_cyr">Ўзбек</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <a href="index.html#download" class="btn-primary" x-text="t[lang].downloadBtn"></a>
+                <button class="hamburger" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" :class="{ open: mobileMenuOpen }">
+            <a href="index.html#features" x-text="t[lang].menuFeatures"></a>
+            <a href="about.html" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" x-text="t[lang].menuFaq"></a>
+            <a href="terms.html" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
+            <div class="lang-row">
+                <button class="lang-btn" :class="{ active: lang==='uz' }" @click="lang='uz'">O'zbek</button>
+                <button class="lang-btn" :class="{ active: lang==='uz_cyr' }" @click="lang='uz_cyr'">Ўзбек</button>
+                <button class="lang-btn" :class="{ active: lang==='ru' }" @click="lang='ru'">Рус</button>
+                <button class="lang-btn" :class="{ active: lang==='en' }" @click="lang='en'">EN</button>
+                <button class="lang-btn" :class="{ active: lang==='ar' }" @click="lang='ar'">ع</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+        <h1 x-text="t[lang].faqTitle"></h1>
+    </div>
+
+    <p class="faq-subtitle" x-text="t[lang].faqSubtitle"></p>
+
+    <!-- FAQ ACCORDION -->
+    <div class="faq-list">
+        <template x-for="(faq, idx) in t[lang].faqs" :key="idx">
+            <div class="faq-item" :class="{ open: openIdx === idx }">
+                <button class="faq-question" @click="openIdx = openIdx === idx ? null : idx">
+                    <span x-text="faq.q"></span>
+                    <i class="fas fa-chevron-down faq-chevron"></i>
+                </button>
+                <div class="faq-answer" x-text="faq.a"></div>
+            </div>
+        </template>
+    </div>
+
+    <!-- CTA -->
+    <div class="faq-cta">
+        <p x-text="t[lang].faqSubtitle"></p>
+        <a href="https://t.me/navbat_ol_support_bot" target="_blank">
+            <i class="fab fa-telegram"></i>
+            Telegram
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="about.html" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" x-text="t[lang].menuFaq"></a>
+            <a href="terms.html" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Tiyn Zaytun LLC. <span x-text="t[lang].footerRights"></span></p>
+        <p class="footer-note" x-text="t[lang].footerNote"></p>
+    </footer>
+
+    <script src="shared.js"></script>
+</body>
+</html>
