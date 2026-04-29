@@ -17,6 +17,17 @@
         [x-cloak] { display: none !important; }
         .faq-card { transition: all 0.3s ease; }
         .faq-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+        .faq-image {
+                        width: 100%;
+                        max-width: 450px; /* Rasmni haddan tashqari katta bo'lib ketishidan saqlaydi */
+                        margin: 1.5rem auto; /* Tepadan va pastdan joy tashlaydi, o'rtaga qo'yadi */
+                        display: block;
+                        border-radius: 20px; /* Apple uslubidagi yumshoq burchaklar */
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Juda mayin soya */
+                        border: 1px solid #f1f1f1; /* Rasm oq bo'lsa, fon bilan aralashib ketmasligi uchun */
+                        transition: transform 0.3s ease;
+                    }
+        .faq-image:hover {transform: scale(1.02); /* Sichqoncha borganda biroz kattalashish effekti */}
     </style>
 </head>
 <body class="bg-[#f5f5f7] text-gray-900" x-data="localizer()" x-cloak>
@@ -200,9 +211,9 @@
                                             <li>Foydalanish shartlari va talablari bilan batafsil tanishib chiqib, roziligingizni tasdiqlang.</li>
                                             <li>So‘ngra "Davom etish" tugmasini bosing va telefon raqamingizga kelgan tasdiqlash kodini kiriting.</li>
                                         </ol>
-                                        <img src="/images/signup/Sign-up.jpg" alt="Qo'llanma" class="rounded-2xl border border-gray-100 shadow-sm mt-4">
-                                        <img src="/images/signup/04_OTP.jpg" alt="Qo'llanma" class="rounded-2xl border border-gray-100 shadow-sm mt-4">
-                                        <img src="/images/signup/05_OTP.jpg" alt="Qo'llanma" class="rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/Sign-up.jpg" alt="Qo'llanma" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/04_OTP.jpg" alt="Qo'llanma" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/05_OTP.jpg" alt="Qo'llanma" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
                                     ` 
                                 }
                             ]},
