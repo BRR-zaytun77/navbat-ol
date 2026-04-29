@@ -213,8 +213,14 @@
 
     <script>
         function localizer() {// 1. LocalStorage'dan tanlangan tilni tekshiramiz
-            // Agar xotira bo'sh bo'lsa, standart til sifatida 'uz' ni oladi
-            const selectedLang = localStorage.getItem('navbat_ol_user_lang') || 'uz_cyr';
+            // 1. Avval xotirani tekshiramiz
+            let selectedLang = localStorage.getItem('navbat_ol_user_lang');
+            
+            // 2. Agar xotira bo'sh bo'lsa, uni 'uz_cyr' deb belgilaymiz va xotiraga yozamiz
+            if (!selectedLang) {
+                selectedLang = 'uz_cyr';
+                localStorage.setItem('navbat_ol_user_lang', 'uz_cyr');
+            }
             return {
                 lang: selectedLang,
                 // Til o'zgarganda xotiraga saqlash funksiyasi
