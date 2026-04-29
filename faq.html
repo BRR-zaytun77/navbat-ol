@@ -17,7 +17,7 @@
         [x-cloak] { display: none !important; }
         .faq-card { transition: all 0.3s ease; }
         .faq-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
-        .faq-image {
+        /* .faq-image {
                         width: 100%;
                         max-width: 450px; /* Rasmni haddan tashqari katta bo'lib ketishidan saqlaydi */
                         margin: 1.5rem auto; /* Tepadan va pastdan joy tashlaydi, o'rtaga qo'yadi */
@@ -26,7 +26,19 @@
                         box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Juda mayin soya */
                         border: 1px solid #f1f1f1; /* Rasm oq bo'lsa, fon bilan aralashib ketmasligi uchun */
                         transition: transform 0.3s ease;
-                    }
+                    } */
+        /* FAQ rasmlari uchun eng ideal stil */
+        .faq-image {
+            width: 100%;
+            max-width: 320px; /* Mobil ilova skrinshoti uchun ideal kenglik */
+            margin: 1.5rem auto; /* Tepadan/pastdan joy va O'RTADA turishi uchun */
+            display: block;
+            border-radius: 24px; /* Ko'proq yumshatilgan burchaklar (iOS uslubi) */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08); /* Yumshoqroq va chuqurroq soya */
+            border: 1px solid #f0f0f0;
+            background-color: #fff;
+            padding: 8px; /* Rasm va ramka orasida biroz joy (rasmga nafas beradi) */
+        }
         .faq-image:hover {transform: scale(1.02); /* Sichqoncha borganda biroz kattalashish effekti */}
     </style>
 </head>
