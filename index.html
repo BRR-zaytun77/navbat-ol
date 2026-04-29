@@ -215,7 +215,7 @@
         function localizer() {// 1. LocalStorage'dan tanlangan tilni tekshiramiz
             let selectedLang = localStorage.getItem('navbat_ol_user_lang');
     
-            if (!savedLang) {
+            if (!selectedLang) {
                 // Brauzer tilini tekshirish (masalan: 'ru-RU', 'uz-UZ')
                 const browserLang = navigator.language || navigator.userLanguage;
                 
