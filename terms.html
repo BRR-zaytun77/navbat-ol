@@ -128,7 +128,14 @@
 
     <script>
         function localizer() {
-            const selectedLang = localStorage.getItem('navbat_ol_user_lang') || 'uz';
+            // 1. Avval xotirani tekshiramiz
+            let selectedLang = localStorage.getItem('navbat_ol_user_lang');
+            
+            // 2. Agar xotira bo'sh bo'lsa, uni 'uz_cyr' deb belgilaymiz va xotiraga yozamiz
+            if (!selectedLang) {
+                selectedLang = 'uz_cyr';
+                localStorage.setItem('navbat_ol_user_lang', 'uz_cyr');
+            }
             return {
                 lang: selectedLang,
                 init() {
