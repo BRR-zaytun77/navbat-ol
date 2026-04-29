@@ -151,13 +151,19 @@
 
     <script>
         function localizer() {
-            // 1. Avval xotirani tekshiramiz
-            let selectedLang = localStorage.getItem('navbat_ol_user_lang');
-            
-            // 2. Agar xotira bo'sh bo'lsa, uni 'uz_cyr' deb belgilaymiz va xotiraga yozamiz
-            if (!selectedLang) {
-                selectedLang = 'uz_cyr';
-                localStorage.setItem('navbat_ol_user_lang', 'uz_cyr');
+           let selectedLang = localStorage.getItem('navbat_ol_user_lang');
+    
+            if (!savedLang) {
+                // Brauzer tilini tekshirish (masalan: 'ru-RU', 'uz-UZ')
+                const browserLang = navigator.language || navigator.userLanguage;
+                
+                // Agar brauzer tili ruscha bo'lsa, yoshi kattalar deb taxmin qilib Kirillni beramiz
+                if (browserLang.startsWith('ru')) {
+                    selectedLang = 'uz_cyr';
+                } else {
+                    selectedLang = 'uz'; // Qolgan holatlarda Lotin
+                }
+                localStorage.setItem('navbat_ol_user_lang', selectedLang);
             }
             return {
                 lang: selectedLang,
