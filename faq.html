@@ -108,7 +108,32 @@
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-12" x-data="{ activeSection: 'general' }">
+    <!-- <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-12" x-data="{ activeSection: 'general' }"> -->
+    <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-12" 
+      x-data="{ activeSection: 'general' }"
+      x-init="
+        // Faqat desktop (768px dan katta) ekranlar uchun kuzatuvchini yoqamiz
+        if (window.innerWidth >= 768) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Seksiyaning katta qismi ko'ringanda aktiv qilish
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+                        activeSection = entry.target.id;
+                    }
+                });
+            }, { 
+                threshold: [0.3, 0.5], // Bir nechta chegara qiymatlari aniqlikni oshiradi
+                rootMargin: '-10% 0px -40% 0px' // Header va pastki qism masofasini hisobga olish
+            });
+
+            // Seksiyalarni kuzatishni boshlash
+            $nextTick(() => {
+                document.querySelectorAll('section[id]').forEach((section) => {
+                    observer.observe(section);
+                });
+            });
+        }
+      ">
         
         <aside class="w-full md:w-72 flex-shrink-0">
             <div class="sticky top-32 space-y-2">
@@ -328,8 +353,6 @@
                                         </ol>
                                         <p class="mb-3">Tizim shu sana uchun doimiy tartibning o'rniga siz bergan sozlanmani oladi. Masalan: odatda har payshanba ish kuni edi. Kelayotgan payshanba zarurat yuzasidan ishlay olmaysiz. O'sha kunni alohida kun sifatida ko'rsatish orqali mijozlarning bu kunda navbatga turishlarini oldini olishingiz mumkin. </p>
                                          <!-- Ogohlantirish bloki -->
-                                         
-                                         <!--
                                         <div class="my-6 p-5 bg-blue-50 border-l-4 border-blue-600 rounded-r-2xl">
                                             <div class="flex items-start">
                                                 <div class="flex-shrink-0 text-blue-600 mr-4">
@@ -346,20 +369,22 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        -->
-
-                                        <div class="backdrop-blur-md bg-white/50 border border-gray-200 p-6 rounded-3xl shadow-lg">
-                                            <blockquote class="border-l-2 border-gray-900 pl-4 italic text-gray-700">
-                                                Navbat olingan kunlarda o'zgarish qilinganda barcha mas'uliyat mutaxassis zimmasiga yuklatiladi. 
-                                                        Bu holatda tizim yangi tartibga tushmagan aniq vaqtdagi navbatlarni bekor qiladi. 
-                                                        Ish kuni to'lig'icha dam sifatida ko'rsatilganda esa, shu kundagi barcha navbatlar bekor bo'ladi. 
-                                                        Shuning uchun mutaxassislardan bu amalni bajarishda ehtiyotkorlik talab etiladi.
-                                            </blockquote>
-                                        </div>
-                                        
                                         <img src="/images/exceptional_days/main.jpg" alt="Qo'llanma" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
                                         <img src="/images/exceptional_days/work_day.jpg" alt="Qo'llanma" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
                                         <img src="/images/exceptional_days/off_day.jpg" alt="Qo'llanma" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Menga yozilgan mijozlar navbatlarini qayerdan kuzatib boraman?', 
+                                    a: `
+                                        <p class="mb-3">Sizga yozilgan navbatlarni ikki usulda kuzatishingiz mumkin: </p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>"Asosiy" oynada bugungi va kelgusi kunlar uchun navbatlarning ma'lumotlari orqali.</li>
+                                            <li>"Ish kuni" bo‘limida joriy va kelasi kunlar uchun navbatlarning ma'lumotlari orqali.</li>
+                                            <li>Har ikki usulda ham navbat olgan mijozlarning batafsil ma’lumotlarini ko‘rish imkoniyati mavjud.</li> 
+                                        </ol>
+                                        <img src="/images/specialist_queues/04. Main -_ Variant 1.jpg" alt="Qo'llanma" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_queues/01. Ish kuni -_ Main.jpg" alt="Qo'llanma" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
                                     `
                                 },
                             ]}
