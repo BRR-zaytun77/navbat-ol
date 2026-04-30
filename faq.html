@@ -430,20 +430,221 @@
                             ]}
                         ]
                     },
-                    uz_cyr: {
-                        contactTitle: 'Боғланиш',
+                    uz_cyrillic: {
+                        contactTitle: 'Контактлар',
                         downloadBtn: 'Юклаб олиш',
-                        menuFeatures: 'Имкониятлар', menuAbout: 'Лойиҳа ҳақида', menuTerms: 'Шартлар', menuPrivacy: 'Махфийлик',
-                        faqTitle: 'Ёрдам Маркази', faqSub: 'Navbat-Ol ҳақида кўп сўраладиган саволлар ва батафсил жавоблар.',
-                        footerNote: 'Ушбу лойиҳа Tiyn Zaytun томонидан жамият бахти ва самарадорлиги учун ишлаб чиқилган.',
-                        copyright: '© 2026 Tiyn Zaytun МЧЖ. Барча ҳуқуқлар ҳимояланган.',
+                        menuFeatures: 'Имкониятлар', menuAbout: 'Лойиҳа ҳақида', menuTerms: 'Фойдаланиш шартлари', menuPrivacy: 'Махфийлик сиёсати',
+                        faqTitle: 'Ёрдам маркази', faqSub: 'Navbat-Ol тизими ҳақида кўп бериладиган саволлар ва батафсил жавоблар.',
+                        footerNote: 'Ушбу лойиҳа жамият фаровонлиги ва самарадорлиги учун Tiyn Zaytun томонидан ишлаб чиқилган.',
+                        copyright: '© 2026 "Tiyn Zaytun" МЧЖ. Барча ҳуқуқлар ҳимояланган.',
                         faqCategories: [
+                            
+                            // Умумий
                             { id: 'general', title: 'Умумий', items: [
-                                { q: 'Navbat-Ol ўзи нима?', a: 'Navbat-Ol — хизмат кўрсатиш жойларида масофадан навбат банд қилиш тизимидир.' },
-                                { q: 'Рўйхатдан ўтиш шартми?', a: 'Ҳа, навбатларингизни кузатиш учун телефон рақам орқали рўйхатдан ўтилади.' }
+                                { q: 'Navbat-Ol нима?', a: 'Navbat-Ol — бу хизмат кўрсатиш масканларида масофадан туриб навбат банд қилиш тизимидир.' },
+                                { q: 'Рўйхатдан ўтиш шартми?', a: 'Ҳа, навбатларингизни кузатиб бориш ва бошқариш учун телефон рақамингиз орқали рўйхатдан ўтишингиз лозим.' },
+                                { 
+                                    q: 'Иловада қандай рўйхатдан ўтилади?', 
+                                    a: `
+                                        <p class="mb-3">Рўйхатдан ўтиш учун қуйидаги қадамларни бажаринг:</p>
+                                        <ol class="list-decimal ml-5 mb-3">
+                                            <li>Иловани ўрнатинг ва ўзингизга қулай тилни танланг.</li>
+                                            <li>"Кейинги" тугмасини босиб, илова имкониятлари билан танишинг.</li>
+                                            <li>Рўйхатдан ўтиш учун исмингиз ва мобил рақамингизни киритинг.</li>
+                                            <li>Фойдаланиш шартлари билан танишиб, розилигингизни тасдиқланг.</li>
+                                            <li>Сўнг "Давом этиш" тугмасини босинг ва телефонингизга келган тасдиқлаш кодини киритинг.</li>
+                                        </ol>
+                                        <img src="/images/signup/Sign-up.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/04_OTP.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/05_OTP.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                                { 
+                                    q: 'Илова бепулми?',
+                                    a: `
+                                        <p class="mb-3">Мижозлар учун иловадан фойдаланиш синов (trial) даврида мутлақо <strong>бепул</strong>. 
+                                        Кейинчалик эса тариф режасига мувофиқ навбатларни харид қилиш талаб этилади.</p>
+                                        <p class="mb-3">Мутахассислар учун Navbat-Ol тизимининг асосий имкониятлари бепул. Шу билан бирга, шахсий брендингизни ривожлантиришни ва ишларингизни профессионал тарзда тақдим этишни истайсизми? Мижозлар ишончини оширишни-чи? Унда сиз учун <strong>Портфолио</strong> функцияси мавжуд. 
+                                        Ундан махсус тариф режалари асосида фойдаланиш мумкин. 
+                                        Қўшимча маълумотларни "Мутахассислар учун" бўлимидан топишингиз мумкин.</p>
+                                        `
+                                },
+                                { 
+                                    q: 'Келажакда тариф режалари ва синов даврлари ўзгариши мумкинми?',
+                                    a: `
+                                        <p class="mb-3">Биз Navbat-Ol тизимини доимий равишда такомиллаштириб борамиз. 
+                                        Янги имкониятлар қўшиш ва хизмат кўрсатиш сифатини юқори даражада ушлаб туриш мақсадида, тариф режаларимиз ва акция шартлари (жумладан, синов даври) вақти-вақти билан қайта кўриб чиқилиши мумкин. 
+                                        Ҳар қандай ўзгариш ҳақида фойдаланувчиларни олдиндан хабардор қилишга ва энг қулай шартларни таклиф этишга ҳаракат қиламиз.</p>
+                                        `
+                                },
+                                { q: 'Профилни мижоздан мутахассисга ёки аксинча қандай ўзгартириш мумкин?', a: 'Иловада икки хил режим мавжуд. Ҳар бир фойдаланувчи аввал "Мижоз" сифатида рўйхатдан ўтади. Агар сиз хизмат кўрсатувчи бўлсангиз, "Профил" ойнасидаги "Режим" тугмасини босиш орқали "Мутахассис" режимига ўтишингиз мумкин. Худди шу тартибда "Мижоз" режимига қайтиш ҳам мумкин.' },
+                                { q: 'Бир вақтнинг ўзида ҳам мижоз, ҳам мутахассис бўлишим мумкинми?', a: 'Албатта, ҳар бир рўйхатдан ўтган фойдаланувчи ҳам мижоз, ҳам мутахассис сифатида иштирок этиши мумкин. Шунчаки профил ойнасидан керакли режимни алмаштириб олсангиз кифоя.' },
+                                
                             ]},
-                            { id: 'app', title: 'Илова бўйича', items: [
-                                { q: 'Илова бепулми?', a: 'Мижозлар учун иловадан фойдаланиш дастлабки синов (trial) муддатида мутлақо <strong>бепул</strong>. Сўнгра тариф режасига мувофиқ навбатлар сотиб олиш талаб этилади.' }
+                    
+                            // Мижоз
+                            { id: 'client', title: 'Мижозлар учун', items: [
+                                { 
+                                    q: 'Керакли мутахассисни қандай топиш мумкин?', 
+                                    a: `
+                                        <p class="mb-3">Керакли мутахассисни топишнинг бир неча усули мавжуд:</p>
+                                        <ol class="list-decimal ml-5 mb-3">
+                                            <li>Асосий экрандаги қидирув сатрига мутахассис исмини ёки фаолият йўналишини ёзинг.</li>
+                                            <li>"Хизматлар" бўлимидан керакли тоифани танланг.</li>
+                                            <li>"Харита" функцияси орқали яқин атрофдаги мутахассисларни топинг ва жойлашув белгисини босинг.</li>
+                                            <li>Кенгайтирилган қидирувдан фойдаланиб, ҳудуд, тоифа ва бошқа филтрлар орқали изланг.</li>
+                                        </ol>
+                                        <img src="/images/find_specialist/11_Asosiy.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/14_Search.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/11_1_Maps.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/15_Filter.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'Навбатни қандай банд қилиш мумкин?', 
+                                    a: `
+                                        <p class="mb-3">Керакли мутахассис устига босиб, унинг профилига ўтинг. "Навбат олиш" тугмасини босинг, ўзингизга қулай вақтни танланг ва "Навбатни тасдиқлаш" тугмаси билан жараённи якунланг.</p>
+                                        <img src="/images/queue_taking/15_About doctor.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_taking/16_Booking_show.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_taking/16_Booking_info_pop_up.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'Навбат банд қилинганини қандай билиш мумкин?', 
+                                    a: `
+                                        <p class="mb-3">Навбат тасдиқлангач, экранда "Муваффақиятли банд қилинди" хабари чиқади. Шунингдек, "Менинг навбатларим" бўлими орқали барча фаол навбатларингиз ҳақидаги маълумотларни исталган вақтда кўришингиз ва кузатиб боришингиз мумкин.</p>
+                                        <img src="/images/queue_check/11-rasm.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_check/39_Bandliklarim_faol.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_check/39_Bandliklarim_details.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'Агар бора олмасам, навбатни қандай бекор қиламан?', 
+                                    a: `
+                                        <p class="mb-3">"Менинг навбатларим" бўлимига ўтинг ва бекор қилмоқчи бўлган навбатингизни танланг. "Бекор қилиш" тугмасини босинг ва амални тасдиқланг. Шуни унутмангки, ҳар бир мутахассиснинг ўзига хос бекор қилиш қоидалари ва вақт чекловлари бўлиши мумкин.</p>
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_details.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_details_cancel.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_Bekor_qilingan.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                }
+                            ]},
+                    
+                            // Мутахассис
+                            { id: 'specialist', title: 'Мутахассислар учун', items: [
+                                { q: 'Иловада мутахассислар кимлар?', a: 'Мутахассислар — бу ўз касбий фаолияти доирасида хизмат кўрсатувчи ва мижозларни илова орқали қабул қилувчи фойдаланувчилардир.' },
+                                { 
+                                    q: 'Профилни қандай тўлдириш керак?', 
+                                    a: `
+                                        <p class="mb-3">"Профил" бўлимининг "Шахсий маълумотлар" бандига ўтинг. "Асосий" ва "Фаолият" кичик бўлимларига барча керакли маълумотларни киритинг ва "Сақлаш" тугмасини босинг. Унутманг, профилингиз қанчалик тўлиқ ва аниқ бўлса, мижозларнинг сизга бўлган ишончи шунчалик юқори бўлади.</p>
+                                        <img src="/images/specialist_profil_fill/prfil_asosiy.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_profil_fill/profil_work.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                
+                                { 
+                                    q: 'Қабул кунларини қандай белгилаш мумкин?', 
+                                    a: `
+                                        <p class="mb-3">Мутахассиснинг қабул кунларини созлаш икки хил бўлади: доимий иш графиги ва алоҳида кунлар. Қуйида доимий графикни созлаш тушунтирилган:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>"Профил" бўлимидаги "Қабул кунлари" бандига киринг.</li>
+                                            <li>Ҳафта кунини танланг ва созлаш ойнасига ўтинг.</li>
+                                            <li>Ушбу кун иш куни ёки дам олиш куни эканлигини белгиланг.</li> 
+                                            <li>Агар дам олиш кунини танласангиз, пастдаги "Киритиш" тугмасини босинг. Шу билан ушбу ҳафта куни учун созлама якунланади.</li>
+                                            <li>Агар иш кунини танласангиз, иш вақти, максимал қабул сони ва бир мижоз учун ўртача вақтни кўрсатинг. Охирида "Киритиш" тугмаси билан сақланг.</li>
+                                        </ol>
+                                        <!-- Огоҳлантириш блоки -->
+                                        <div class="my-6 p-5 bg-blue-50 border-l-4 border-blue-600 rounded-r-2xl">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 text-blue-600 mr-4">
+                                                    <i class="fas fa-exclamation-circle text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-blue-900 font-bold mb-1 italic">Муҳим эслатма</h4>
+                                                    <p class="text-blue-800 text-sm leading-relaxed">
+                                                        Навбатлар мавжуд бўлган кунларга ўзгартириш киритилганда, барча масъулият мутахассис зиммасида бўлади. 
+                                                        Бунда тизим янги графикка тушмай қолган вақтлардаги навбатларни бекор қилади. 
+                                                        Агар иш куни тўлиқ дам олиш кунига айлантирилса, шу кундаги барча навбатлар бекор қилинади. 
+                                                        Шу сабабли мутахассислардан ушбу амални бажаришда эҳтиёткор бўлишларини сўраймиз.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/images/working_days/weeks.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/working_days/off_day.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/working_days/work_day.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Доимий графикдан ташқари иш кунини (истисно) қандай белгилаш мумкин?', 
+                                    a: `
+                                        <p class="mb-3">Доимий графикни бузмаган ҳолда маълум бир кунни истисно тариқасида созлаш мумкин. Бу зарурат туғилганда мижозлар оқимини бошқаришга ёрдам беради. Бунинг учун қуйидаги қадамларни бажаринг:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>"Қабул кунлари" ойнасида "Алоҳида кунлар" бўлимига ўтинг.</li>
+                                            <li>Керакли санани танланг.</li>
+                                            <li>Ушбу кун иш куни ёки дам олиш куни эканлигини белгиланг.</li> 
+                                            <li>Иш куни этиб белгиланса, иш вақти, макс. қабул ва ўртача вақтни кўрсатинг.</li>
+                                            <li>"Қўшиш" тугмасини босинг. Бу ушбу сана учун истисноли графикни сақлайди.</li>
+                                            <li>Якунида "Киритиш" тугмаси билан ўзгаришларни сақланг.</li>
+                                        </ol>
+                                        <p class="mb-3">Тизим ушбу сана учун доимий график ўрнига сиз белгилаган созламани қўллайди. Масалан: одатда ҳар пайшанба иш куни. Келаси пайшанба эса зарурат туфайли ишлай олмайсиз. Ушбу кунни алоҳида (дам олиш) кун сифатида кўрсатсангиз, мижозлар ўша кунга навбат банд қилишининг олди олинади.</p>
+                                         <!-- Огоҳлантириш блоки -->
+                                        <div class="my-6 p-5 bg-blue-50 border-l-4 border-blue-600 rounded-r-2xl">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 text-blue-600 mr-4">
+                                                    <i class="fas fa-exclamation-circle text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-blue-900 font-bold mb-1 italic">Муҳим эслатма</h4>
+                                                    <p class="text-blue-800 text-sm leading-relaxed">
+                                                        Мавжуд навбатлари бор кунларни ўзгартирганда масъулият мутахассисда бўлади. 
+                                                        Тизим янги вақтга мос келмаган навбатларни бекор қилади. 
+                                                        Агар кун дам олиш кунига айланса, барча навбатлар бекор бўлади.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/images/exceptional_days/main.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/exceptional_days/work_day.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/exceptional_days/off_day.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Менга навбатга ёзилган мижозларни қаердан кузатишим мумкин?', 
+                                    a: `
+                                        <p class="mb-3">Навбатларни иккита жойдан кузатишингиз мумкин:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>"Асосий" ойнасидаги бугунги ва яқин кунлардаги навбатлар ҳақидаги маълумотлар орқали.</li>
+                                            <li>"Иш куни" бўлимидаги жорий ва кейинги кунлар учун навбат маълумотлари орқали.</li>
+                                            <li>Иккала ҳолатда ҳам навбат олган мижозларнинг батафсил маълумотларини кўриш имконияти мавжуд.</li> 
+                                        </ol>
+                                        <img src="/images/specialist_queues/04. Main -_ Variant 1.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_queues/01. Ish kuni -_ Main.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Портфолио нима?', 
+                                    a: `
+                                        <p class="mb-3">Портфолио — бу сизнинг амалга оширган ишларингиз намуналари жамланган медиа галереядир. 
+                                        Унга юклаган фото ва видео материалларингиз профилингизга ташриф буюрган барча фойдаланувчиларга кўринади. 
+                                        Портфолионинг афзаллиги шундаки, у орқали ўз маҳоратингизни кўрсатишингиз, 
+                                        хизматларингизни реклама қилишингиз ва энг муҳими, янги мижозлар оқимини жалб қилишингиз мумкин.</p>
+                                        <img src="/images/portfolio/24_Portfolio_empty.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/portfolio/24_Portfolio_galery.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Портфолио блокланиши нимани англатади ва уни очиш учун нима қилиш керак?', 
+                                    a: `
+                                        <p class="mb-3">Портфолио блокланиши — обуна муддати тугаганлиги сабабли иш намуналарингиз вақтинчалик фойдаланувчиларга кўринмаслигини англатади. 
+                                        Уни қайта фаоллаштириш учун "Портфолиони очиш" тугмасини босинг ва ойлик обуна тўловини амалга оширинг. 
+                                        Шундан сўнг хизматдан чекловларсиз фойдаланишда давом этишингиз мумкин.</p>
+                                        <img src="/images/portfolio_locked/22_Profil_disable_obuna.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/portfolio_locked/22_obuna_success.jpg" alt="Йўриқнома" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
                             ]}
                         ]
                     },
@@ -666,39 +867,425 @@
                         ]
                     },
                     en: {
-                        contactTitle: 'Get in Touch',
-                        downloadBtn: 'Download Now',
-                        menuFeatures: 'Features', menuAbout: 'About Project', menuTerms: 'Terms', menuPrivacy: 'Privacy',
-                        faqTitle: 'Help Center', faqSub: 'Frequently asked questions and detailed answers about Navbat-Ol.',
-                        footerNote: 'This project is developed by Tiyn Zaytun for the happiness and efficiency of society.',
+                        contactTitle: 'Contact Us',
+                        downloadBtn: 'Download',
+                        menuFeatures: 'Features', menuAbout: 'About', menuTerms: 'Terms', menuPrivacy: 'Privacy',
+                        faqTitle: 'Help Center', faqSub: 'Frequently asked questions and detailed information about the Navbat-Ol system.',
+                        footerNote: 'This project was developed by Tiyn Zaytun for social welfare and efficiency.',
                         copyright: '© 2026 Tiyn Zaytun LLC. All rights reserved.',
                         faqCategories: [
+                            
+                            // General
                             { id: 'general', title: 'General', items: [
-                                { q: 'What is Navbat-Ol?', a: 'Navbat-Ol is a remote queue booking system for service locations.' },
-                                { q: 'Is registration required?', a: 'Yes, registration via phone number is required to track your status.' }
+                                { q: 'What is Navbat-Ol?', a: 'Navbat-Ol is a remote queue management and booking system for service providers.' },
+                                { q: 'Is registration required?', a: 'Yes, you must register with your phone number to track and manage your bookings.' },
+                                { 
+                                    q: 'How do I register in the app?', 
+                                    a: `
+                                        <p class="mb-3">Follow these steps to register:</p>
+                                        <ol class="list-decimal ml-5 mb-3">
+                                            <li>Install the app and select your preferred language.</li>
+                                            <li>Click "Next" to explore the app's features.</li>
+                                            <li>Enter your name and mobile number to register.</li>
+                                            <li>Read and accept the terms of service.</li>
+                                            <li>Click "Continue" and enter the verification code sent to your phone.</li>
+                                        </ol>
+                                        <img src="/images/signup/Sign-up.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/04_OTP.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/05_OTP.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                                { 
+                                    q: 'Is the app free?',
+                                    a: `
+                                        <p class="mb-3">For clients, the app is completely <strong>free</strong> during the trial period. 
+                                        After that, you will need to purchase queue slots according to the subscription plan.</p>
+                                        <p class="mb-3">For specialists, the core features of Navbat-Ol are free. However, if you want to build your personal brand and showcase your work professionally, the <strong>Portfolio</strong> feature is available. 
+                                        This can be used under special tariff plans. 
+                                        More details can be found in the "For Specialists" section.</p>
+                                        `
+                                },
+                                { 
+                                    q: 'Will pricing plans and trial periods change in the future?',
+                                    a: `
+                                        <p class="mb-3">We are constantly improving Navbat-Ol. 
+                                        To add new features and maintain high service quality, our tariff plans and promotional terms (including the trial period) may be updated periodically. 
+                                        We aim to notify users in advance and offer the best possible conditions.</p>
+                                        `
+                                },
+                                { q: 'How do I switch between Client and Specialist modes?', a: 'The app has two modes. Every user initially registers as a "Client". If you are a service provider, you can switch to "Specialist" mode by clicking the "Mode" button in the "Profile" tab. You can switch back to "Client" mode the same way.' },
+                                { q: 'Can I be both a client and a specialist at the same time?', a: 'Absolutely. Every registered user can act as both a client and a specialist. Simply switch to the desired mode in your profile settings.' },
+                                
                             ]},
-                            { id: 'app', title: 'Application', items: [
-                                { q: 'Is the app free?', a: 'Using the application for customers is completely <strong>free</strong> during the initial trial period. Afterward, purchasing queue credits will be required according to the tariff plan.' }
+                    
+                            // Client
+                            { id: 'client', title: 'For Clients', items: [
+                                { 
+                                    q: 'How do I find a specific specialist?', 
+                                    a: `
+                                        <p class="mb-3">There are several ways to find the right specialist:</p>
+                                        <ol class="list-decimal ml-5 mb-3">
+                                            <li>Use the search bar on the home screen to type the specialist\'s name or profession.</li>
+                                            <li>Select a category from the "Services" section.</li>
+                                            <li>Use the "Map" feature to find nearby specialists.</li>
+                                            <li>Use advanced filters to search by region, category, and other criteria.</li>
+                                        </ol>
+                                        <img src="/images/find_specialist/11_Asosiy.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/14_Search.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/11_1_Maps.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/15_Filter.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'How do I book a spot in the queue?', 
+                                    a: `
+                                        <p class="mb-3">Click on the specialist's profile. Tap the "Book Queue" button, select a convenient time slot, and finalize the process by clicking "Confirm Booking".</p>
+                                        <img src="/images/queue_taking/15_About doctor.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_taking/16_Booking_show.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_taking/16_Booking_info_pop_up.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'How do I know if my booking was successful?', 
+                                    a: `
+                                        <p class="mb-3">Once confirmed, a "Successfully Booked" message will appear on your screen. You can also track all your active bookings in the "My Queues" section at any time.</p>
+                                        <img src="/images/queue_check/11-rasm.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_check/39_Bandliklarim_faol.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_check/39_Bandliklarim_details.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'How do I cancel a booking if I cannot attend?', 
+                                    a: `
+                                        <p class="mb-3">Go to "My Queues" and select the booking you wish to cancel. Click the "Cancel" button and confirm. Please note that each specialist may have specific cancellation policies and time limits.</p>
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_details.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_details_cancel.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_Bekor_qilingan.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                }
+                            ]},
+                    
+                            // Specialist
+                            { id: 'specialist', title: 'For Specialists', items: [
+                                { q: 'Who are "Specialists" in the app?', a: 'Specialists are professional service providers who use the app to manage their client flow and bookings.' },
+                                { 
+                                    q: 'How do I complete my profile?', 
+                                    a: `
+                                        <p class="mb-3">Go to the "Personal Information" section in your Profile. Fill in the required details in the "General" and "Activity" tabs, then click "Save". A complete and accurate profile builds higher trust with clients.</p>
+                                        <img src="/images/specialist_profil_fill/prfil_asosiy.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_profil_fill/profil_work.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                
+                                { 
+                                    q: 'How do I set my working hours?', 
+                                    a: `
+                                        <p class="mb-3">Specialists can set two types of schedules: a regular weekly schedule or specific daily exceptions. Here is how to set a regular schedule:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>Go to "Working Days" in the Profile section.</li>
+                                            <li>Select a day of the week to open its settings.</li>
+                                            <li>Mark the day as either a "Work Day" or "Off Day".</li> 
+                                            <li>If it is an Off Day, click "Submit" to finish.</li>
+                                            <li>If it is a Work Day, specify the working hours, maximum capacity, and average service time per client. Click "Submit" to save.</li>
+                                        </ol>
+                                        <div class="my-6 p-5 bg-blue-50 border-l-4 border-blue-600 rounded-r-2xl">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 text-blue-600 mr-4">
+                                                    <i class="fas fa-exclamation-circle text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-blue-900 font-bold mb-1 italic">Important Note</h4>
+                                                    <p class="text-blue-800 text-sm leading-relaxed">
+                                                        The specialist is responsible for any changes made to days with existing bookings. 
+                                                        The system will cancel any appointments that no longer fit the new schedule. 
+                                                        If a work day is changed to an off day, all bookings for that day will be cancelled. 
+                                                        Please proceed with caution.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/images/working_days/weeks.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/working_days/off_day.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/working_days/work_day.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'How do I set an exception for a specific day?', 
+                                    a: `
+                                        <p class="mb-3">You can set a schedule for a specific date without changing your regular weekly routine. This is useful for managing unexpected shifts:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>In "Working Days," go to the "Specific Days" tab.</li>
+                                            <li>Select a specific date.</li>
+                                            <li>Set it as either a Work Day or an Off Day.</li> 
+                                            <li>Adjust the hours and capacity if it's a Work Day.</li>
+                                            <li>Click "Add" to save the exception for that date.</li>
+                                            <li>Finally, click "Submit" to apply all changes.</li>
+                                        </ol>
+                                        <p class="mb-3">Example: If you normally work Thursdays but need to take next Thursday off, setting it as a "Specific Off Day" will prevent clients from booking on that specific date only.</p>
+                                        <div class="my-6 p-5 bg-blue-50 border-l-4 border-blue-600 rounded-r-2xl">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 text-blue-600 mr-4">
+                                                    <i class="fas fa-exclamation-circle text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-blue-900 font-bold mb-1 italic">Important Note</h4>
+                                                    <p class="text-blue-800 text-sm leading-relaxed">
+                                                        Updating days with active bookings remains the responsibility of the specialist. 
+                                                        The system will auto-cancel bookings that fall outside the new time slots.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/images/exceptional_days/main.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/exceptional_days/work_day.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/exceptional_days/off_day.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Where can I see my incoming client bookings?', 
+                                    a: `
+                                        <p class="mb-3">You can track your bookings in two places:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>The "Home" screen for a quick overview of today and upcoming days.</li>
+                                            <li>The "Work Day" section for detailed schedules and client information.</li>
+                                        </ol>
+                                        <img src="/images/specialist_queues/04. Main -_ Variant 1.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_queues/01. Ish kuni -_ Main.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'What is the Portfolio feature?', 
+                                    a: `
+                                        <p class="mb-3">The Portfolio is a media gallery where you can showcase your work. 
+                                        Uploaded photos and videos are visible to all users who visit your profile. 
+                                        It helps demonstrate your skills, advertise services, and attract more clients.</p>
+                                        <img src="/images/portfolio/24_Portfolio_empty.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/portfolio/24_Portfolio_galery.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'What does "Portfolio Locked" mean and how do I unlock it?', 
+                                    a: `
+                                        <p class="mb-3">A locked portfolio means your subscription has expired, and your work samples are temporarily hidden from users. 
+                                        To reactivate it, click "Unlock Portfolio" and complete the monthly subscription payment. 
+                                        You can then continue using the service without restrictions.</p>
+                                        <img src="/images/portfolio_locked/22_Profil_disable_obuna.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/portfolio_locked/22_obuna_success.jpg" alt="Instruction" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
                             ]}
                         ]
                     },
                     ar: {
                         contactTitle: 'اتصل بنا',
-                        downloadBtn: 'تحميل الآن',
-                        menuFeatures: 'المميزات', menuAbout: 'حول المشروع', menuTerms: 'الشروط', menuPrivacy: 'الخصوصية',
-                        faqTitle: 'مركز المساعدة', faqSub: 'الأسئلة الشائعة والأجوبة التفصيلية حول Navbat-Ol.',
-                        footerNote: 'تم تطوير هذا المشروع بواسطة Tiyn Zaytun من أجل سعادة وكفاءة المجتمع.',
-                        copyright: '© 2026 شركة Tiyn Zaytun ذات مسؤولية محدودة. جميع الحقوق محفوظة.',
+                        downloadBtn: 'تحميل',
+                        menuFeatures: 'المميزات', menuAbout: 'عن المشروع', menuTerms: 'الشروط والأحكام', menuPrivacy: 'سياسة الخصوصية',
+                        faqTitle: 'مركز المساعدة', faqSub: 'الأسئلة الشائعة والأجوبة التفصيلية حول نظام Navbat-Ol.',
+                        footerNote: 'تم تطوير هذا المشروع من قبل Tiyn Zaytun من أجل رفاهية وكفاءة المجتمع.',
+                        copyright: '© 2026 شركة Tiyn Zaytun ذ.م.م. جميع الحقوق محفوظة.',
                         faqCategories: [
+                            
+                            // عام
                             { id: 'general', title: 'عام', items: [
-                                { q: 'ما هو Navbat-Ol؟', a: 'Navbat-Ol هو نظام حجز الطوابير عن بعد في أماكن تقديم الخدمة.' },
-                                { q: 'هل التسجيل مطلوب؟', a: 'نعم، يلزم التسجيل عبر رقم الهاتف لمتابعة طوابيرك.' }
+                                { q: 'ما هو Navbat-Ol؟', a: 'Navbat-Ol هو نظام لحجز الطوابير عن بعد في أماكن تقديم الخدمات.' },
+                                { q: 'هل التسجيل إلزامي؟', a: 'نعم، يجب التسجيل برقم هاتفك لتتمكن من تتبع وإدارة حجوزاتك.' },
+                                { 
+                                    q: 'كيف يمكنني التسجيل في التطبيق؟', 
+                                    a: `
+                                        <p class="mb-3">اتبع الخطوات التالية للتسجيل:</p>
+                                        <ol class="list-decimal mr-5 mb-3">
+                                            <li>قم بتثبيت التطبيق واختيار اللغة المناسبة لك.</li>
+                                            <li>اضغط على زر "التالي" للتعرف على مميزات التطبيق.</li>
+                                            <li>أدخل اسمك ورقم هاتفك المحمول للتسجيل.</li>
+                                            <li>اقرأ شروط الاستخدام ووافق عليها.</li>
+                                            <li>ثم اضغط على "استمرار" وأدخل رمز التأكيد المرسل إلى هاتفك.</li>
+                                        </ol>
+                                        <img src="/images/signup/Sign-up.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/04_OTP.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/05_OTP.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                                { 
+                                    q: 'هل التطبيق مجاني؟',
+                                    a: `
+                                        <p class="mb-3">بالنسبة للعملاء، استخدام التطبيق خلال الفترة التجريبية (trial) <strong>مجاني</strong> تماماً. 
+                                        بعد ذلك، ستحتاج إلى شراء تذاكر الدور وفقاً لخطة الأسعار.</p>
+                                        <p class="mb-3">بالنسبة للمتخصصين، المميزات الأساسية لنظام Navbat-Ol مجانية. هل ترغب في تطوير علامتك التجارية الشخصية وعرض أعمالك باحترافية؟ هل تريد زيادة ثقة العملاء؟ إذاً ميزة <strong>المعرض الشخصي (Portfolio)</strong> متاحة لك. 
+                                        يمكن الاستفادة منها وفقاً لخطط أسعار خاصة. 
+                                        يمكنك العثور على مزيد من المعلومات في قسم "للمتخصصين".</p>
+                                        `
+                                },
+                                { 
+                                    q: 'هل يمكن أن تتغير خطط الأسعار والفترات التجريبية في المستقبل؟',
+                                    a: `
+                                        <p class="mb-3">نحن نعمل باستمرار على تطوير نظام Navbat-Ol. 
+                                        من أجل إضافة مميزات جديدة والحفاظ على جودة الخدمة العالية، قد يتم مراجعة خطط الأسعار وشروط العروض (بما في ذلك الفترة التجريبية) بشكل دوري. 
+                                        نحن نحرص على إخطار المستخدمين بأي تغييرات مسبقاً وتقديم أفضل الشروط الممكنة.</p>
+                                        `
+                                },
+                                { q: 'كيف يمكنني تحويل الحساب من عميل إلى متخصص أو العكس؟', a: 'يوجد وضعان في التطبيق. يتم تسجيل كل مستخدم في البداية كـ "عميل". إذا كنت مزود خدمة، يمكنك الانتقال إلى وضع "المتخصص" بالضغط على زر "الوضع" في نافذة "الملف الشخصي". وبنفس الطريقة يمكنك العودة إلى وضع "العميل".' },
+                                { q: 'هل يمكنني أن أكون عميلاً ومتخصصاً في نفس الوقت؟', a: 'بالتأكيد، يمكن لكل مستخدم مسجل أن يعمل كعميل ومتخصص على حد سواء. كل ما عليك فعله هو تبديل الوضع المطلوب من نافذة الملف الشخصي.' },
+                                
                             ]},
-                            { id: 'app', title: 'حول التطبيق', items: [
-                                { q: 'هل التطبيق مجاني؟', a: 'استخدام التطبيق للعملاء <strong>مجاني</strong> تماماً خلال الفترة التجريبية الأولية. بعد ذلك، سيتعين عليك شراء اشتراك حسب خطة الأسعار.',}
+                    
+                            // العميل
+                            { id: 'client', title: 'للعملاء', items: [
+                                { 
+                                    q: 'كيف أجد المتخصص المطلوب؟', 
+                                    a: `
+                                        <p class="mb-3">هناك عدة طرق للعثور على المتخصص المناسب:</p>
+                                        <ol class="list-decimal mr-5 mb-3">
+                                            <li>اكتب اسم المتخصص أو مجال النشاط في شريط البحث على الشاشة الرئيسية.</li>
+                                            <li>اختر الفئة المطلوبة من قسم "الخدمات".</li>
+                                            <li>استخدم ميزة "الخريطة" للعثور على المتخصصين القريبين واضغط على أيقونة الموقع.</li>
+                                            <li>استخدم البحث المتقدم للبحث عن متخصص حسب المنطقة والفئة وفلاتر أخرى.</li>
+                                        </ol>
+                                        <img src="/images/find_specialist/11_Asosiy.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/14_Search.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/11_1_Maps.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/15_Filter.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'كيف أحجز دوراً في الطابور؟', 
+                                    a: `
+                                        <p class="mb-3">اضغط على المتخصص المطلوب وانتقل إلى ملفه الشخصي. اضغط على زر "حجز دور"، اختر الوقت المناسب لك وأكمل العملية بالضغط على زر "تأكيد الحجز".</p>
+                                        <img src="/images/queue_taking/15_About doctor.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_taking/16_Booking_show.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_taking/16_Booking_info_pop_up.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'كيف أعرف أن الدور قد تم حجزه؟', 
+                                    a: `
+                                        <p class="mb-3">بعد تأكيد الحجز، ستظهر رسالة "تم الحجز بنجاح" على الشاشة. كما يمكنك عرض وتتبع المعلومات حول جميع حجوزاتك النشطة في أي وقت من خلال قسم "حجوزاتي".</p>
+                                        <img src="/images/queue_check/11-rasm.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_check/39_Bandliklarim_faol.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_check/39_Bandliklarim_details.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'كيف ألغي الحجز إذا لم أتمكن من الحضور؟', 
+                                    a: `
+                                        <p class="mb-3">انتقل إلى قسم "حجوزاتي" واختر الحجز الذي تريد إلغاءه. اضغط على زر "إلغاء" وأكد العملية. تذكر أن لكل متخصص قواعد إلغاء وقيود زمنية خاصة به.</p>
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_details.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_details_cancel.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_Bekor_qilingan.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                }
+                            ]},
+                    
+                            // المتخصص
+                            { id: 'specialist', title: 'للمتخصصين', items: [
+                                { q: 'من هم المتخصصون في التطبيق؟', a: 'المتخصصون هم المستخدمون الذين يقدمون خدمات في إطار نشاطهم المهني ويستقبلون العملاء من خلال التطبيق.' },
+                                { 
+                                    q: 'كيف أكمل ملفي الشخصي؟', 
+                                    a: `
+                                        <p class="mb-3">انتقل إلى بند "البيانات الشخصية" في قسم "الملف الشخصي". أدخل جميع المعلومات المطلوبة في الأقسام الفرعية "الأساسية" و "النشاط"، ثم اضغط على زر "حفظ". تذكر، كلما كان ملفك الشخصي مكتملاً ودقيقاً، زادت ثقة العملاء بك.</p>
+                                        <img src="/images/specialist_profil_fill/prfil_asosiy.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_profil_fill/profil_work.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                
+                                { 
+                                    q: 'كيف أحدد أيام الاستقبال؟', 
+                                    a: `
+                                        <p class="mb-3">إعداد أيام الاستقبال للمتخصص يكون على نوعين: جدول زمني دائم وأيام منفصلة. فيما يلي شرح لإعداد الجدول الدائم:</p>
+                                         <ol class="list-decimal mr-5 mb-3">
+                                            <li>ادخل إلى بند "أيام الاستقبال" في قسم "الملف الشخصي".</li>
+                                            <li>اختر يوماً من أيام الأسبوع وانتقل إلى نافذة الإعدادات.</li>
+                                            <li>حدد ما إذا كان هذا اليوم يوم عمل أم يوم عطلة.</li> 
+                                            <li>إذا اخترت يوم عطلة، اضغط على زر "إدخال" في الأسفل. وبذلك ينتهي الإعداد لهذا اليوم.</li>
+                                            <li>إذا اخترت يوم عمل، حدد ساعات العمل، الحد الأقصى لعدد الاستقبالات، ومتوسط وقت استقبال العميل الواحد. في النهاية، احفظ الإعدادات بالضغط على "إدخال".</li>
+                                        </ol>
+                                        <div class="my-6 p-5 bg-blue-50 border-r-4 border-blue-600 rounded-l-2xl">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 text-blue-600 ml-4">
+                                                    <i class="fas fa-exclamation-circle text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-blue-900 font-bold mb-1 italic">ملاحظة هامة</h4>
+                                                    <p class="text-blue-800 text-sm leading-relaxed">
+                                                        عند إجراء تغييرات على الأيام التي يوجد بها حجوزات بالفعل، تقع المسؤولية الكاملة على عاتق المتخصص. 
+                                                        في هذه الحالة، سيقوم النظام بإلغاء الحجوزات في الأوقات التي لا تقع ضمن الجدول الجديد. 
+                                                        إذا تم تغيير يوم العمل بالكامل إلى يوم عطلة، فسيتم إلغاء جميع الحجوزات في ذلك اليوم. 
+                                                        لذا نطلب من المتخصصين توخي الحذر عند القيام بهذا الإجراء.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/images/working_days/weeks.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/working_days/off_day.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/working_days/work_day.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'كيف أحدد يوم عمل مختلف عن الجدول الدائم (استثناء)؟', 
+                                    a: `
+                                        <p class="mb-3">يمكن إعداد يوم محدد كاستثناء دون المساس بالجدول الدائم. اتبع الخطوات التالية:</p>
+                                         <ol class="list-decimal mr-5 mb-3">
+                                            <li>في نافذة "أيام الاستقبال"، انتقل إلى قسم "أيام منفصلة".</li>
+                                            <li>اختر التاريخ المطلوب.</li>
+                                            <li>حدد ما إذا كان يوم عمل أم يوم عطلة.</li> 
+                                            <li>عند اختيار يوم عمل، حدد ساعات العمل، الحد الأقصى للاستقبالات، ومتوسط وقت الخدمة.</li>
+                                            <li>اضغط على زر "إضافة". سيؤدي ذلك إلى حفظ الجدول الاستثنائي لهذا التاريخ.</li>
+                                            <li>في النهاية، احفظ التغييرات بزر "إدخال".</li>
+                                        </ol>
+                                        <div class="my-6 p-5 bg-blue-50 border-r-4 border-blue-600 rounded-l-2xl">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 text-blue-600 ml-4">
+                                                    <i class="fas fa-exclamation-circle text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-blue-900 font-bold mb-1 italic">ملاحظة هامة</h4>
+                                                    <p class="text-blue-800 text-sm leading-relaxed">
+                                                        المتخصص مسؤول عن تغيير الأيام التي تحتوي على حجوزات. سيقوم النظام بإلغاء الحجوزات التي لا تتناسب مع الوقت الجديد.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/images/exceptional_days/main.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/exceptional_days/work_day.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/exceptional_days/off_day.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'أين يمكنني تتبع حجوزات العملاء المسجلين لدي؟', 
+                                    a: `
+                                        <p class="mb-3">يمكنك تتبع الحجوزات بطريقتين:</p>
+                                         <ol class="list-decimal mr-5 mb-3">
+                                            <li>في نافذة "الرئيسية" من خلال معلومات الحجوزات لليوم والأيام القادمة.</li>
+                                            <li>في قسم "يوم العمل" من خلال بيانات الحجوزات لليوم الحالي والأيام التالية.</li>
+                                        </ol>
+                                        <img src="/images/specialist_queues/04. Main -_ Variant 1.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_queues/01. Ish kuni -_ Main.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'ما هو المعرض الشخصي (Portfolio)؟', 
+                                    a: `
+                                        <p class="mb-3">المعرض الشخصي هو معرض وسائط يجمع أمثلة على أعمالك. الصور ومقاطع الفيديو التي ترفعها ستكون مرئية لجميع المستخدمين الذين يزورون ملفك الشخصي، مما يساعدك على جذب عملاء جدد.</p>
+                                        <img src="/images/portfolio/24_Portfolio_empty.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/portfolio/24_Portfolio_galery.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'ماذا يعني قفل المعرض الشخصي وكيف يمكن فتحه؟', 
+                                    a: `
+                                        <p class="mb-3">قفل المعرض الشخصي يعني أن أعمالك مخفية مؤقتاً بسبب انتهاء صلاحية الاشتراك. لتنشيطه مرة أخرى، اضغط على زر "فتح المعرض" وقم بسداد قيمة الاشتراك الشهري.</p>
+                                        <img src="/images/portfolio_locked/22_Profil_disable_obuna.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/portfolio_locked/22_obuna_success.jpg" alt="تعليمات" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
                             ]}
                         ]
-                    }
+                    },
                 }
             }
         }
