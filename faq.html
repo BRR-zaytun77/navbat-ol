@@ -448,19 +448,220 @@
                         ]
                     },
                     ru: {
-                        contactTitle: 'Связаться с нами',
-                        downloadBtn: 'Скачать сейчас',
+                        contactTitle: 'Контакты',
+                        downloadBtn: 'Скачать',
                         menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Конфиденциальность',
                         faqTitle: 'Центр помощи', faqSub: 'Часто задаваемые вопросы и подробные ответы о системе Navbat-Ol.',
                         footerNote: 'Этот проект разработан Tiyn Zaytun для благополучия и эффективности общества.',
                         copyright: '© 2026 ООО Tiyn Zaytun. Все права защищены.',
                         faqCategories: [
-                            { id: 'general', title: 'Общие вопросы', items: [
+                            
+                            //Общие
+                            { id: 'general', title: 'Общие', items: [
                                 { q: 'Что такое Navbat-Ol?', a: 'Navbat-Ol — это система дистанционного бронирования очереди в местах оказания услуг.' },
-                                { q: 'Нужна ли регистрация?', a: 'Да, регистрация по номеру телефона необходима для отслеживания ваших очередей.' }
+                                { q: 'Обязательна ли регистрация?', a: 'Да, для отслеживания ваших очередей необходимо зарегистрироваться по номеру телефона.' },
+                                { 
+                                    q: 'Как зарегистрироваться в приложении?', 
+                                    a: `
+                                        <p class="mb-3">Для регистрации выполните следующие действия:</p>
+                                        <ol class="list-decimal ml-5 mb-3">
+                                            <li>Установите приложение и выберите удобный для вас язык.</li>
+                                            <li>Нажмите кнопку "Далее" и ознакомьтесь с возможностями приложения.</li>
+                                            <li>Введите свое имя и мобильный номер для регистрации.</li>
+                                            <li>Ознакомьтесь с условиями использования и подтвердите свое согласие.</li>
+                                            <li>Затем нажмите "Продолжить" и введите код подтверждения, пришедший на ваш телефон.</li>
+                                        </ol>
+                                        <img src="/images/signup/Sign-up.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/04_OTP.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/signup/05_OTP.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                                { 
+                                    q: 'Приложение бесплатное?',
+                                    a: `
+                                        <p class="mb-3">Для клиентов использование приложения в течение пробного (trial) периода абсолютно <strong>бесплатно</strong>. 
+                                        Затем потребуется приобретение очередей в соответствии с тарифным планом.</p>
+                                        <p class="mb-3">Для специалистов основные возможности системы Navbat-Ol бесплатны. Вы также хотите развивать личный бренд и профессионально представлять свои работы? Хотите повысить доверие клиентов? Тогда для вас доступна функция <strong>Портфолио</strong>. 
+                                        Ею можно воспользоваться согласно специальным тарифным планам. 
+                                        Дополнительную информацию можно найти в разделе "Для специалистов".</p>
+                                        `
+                                },
+                                { 
+                                    q: 'Могут ли в будущем измениться тарифные планы и пробные периоды?',
+                                    a: `
+                                        <p class="mb-3">Мы постоянно совершенствуем систему Navbat-Ol. 
+                                        В целях добавления новых возможностей и поддержания высокого качества обслуживания, наши тарифные планы и условия акций (включая пробный период) могут периодически пересматриваться. 
+                                        Мы стремимся заранее уведомлять пользователей о любых изменениях и предлагать наиболее выгодные условия.</p>
+                                        `
+                                },
+                                { q: 'Как изменить профиль с клиента на специалиста или наоборот?', a: 'В приложении есть два режима. Каждый пользователь изначально регистрируется как «Клиент». Если вы являетесь поставщиком услуг, вы можете перейти в режим «Специалист», нажав кнопку «Режим» в окне «Профиль». Таким же образом можно вернуться в режим «Клиент».' },
+                                { q: 'Могу ли я быть одновременно и клиентом, и специалистом?', a: 'Конечно, каждый зарегистрированный пользователь может выступать и как клиент, и как специалист. Вам просто нужно переключить нужный режим в окне профиля.' },
+                                
                             ]},
-                            { id: 'app', title: 'О приложении', items: [
-                                { q: 'Приложение бесплатное?', a: 'Использование приложения для клиентов абсолютно <strong>бесплатно</strong> в течение пробного (trial) периода. Далее потребуется приобретение очередей согласно тарифному плану.' }
+                    
+                            //Клиент
+                            { id: 'client', title: 'Для клиентов', items: [
+                                { 
+                                    q: 'Как найти нужного специалиста?', 
+                                    a: `
+                                        <p class="mb-3">Есть несколько способов найти нужного специалиста:</p>
+                                        <ol class="list-decimal ml-5 mb-3">
+                                            <li>Нажмите на панель поиска на главном экране и введите имя специалиста или название сферы деятельности.</li>
+                                            <li>Выберите нужную категорию в разделе "Услуги".</li>
+                                            <li>Используйте функцию "Карта", чтобы найти ближайших специалистов, и нажмите на значок местоположения.</li>
+                                            <li>Воспользуйтесь расширенным поиском, чтобы найти специалиста по региону, категории и другим фильтрам.</li>
+                                        </ol>
+                                        <img src="/images/find_specialist/11_Asosiy.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/14_Search.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/11_1_Maps.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/find_specialist/15_Filter.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'Как забронировать очередь?', 
+                                    a: `
+                                        <p class="mb-3">Нажмите на нужного специалиста и перейдите в его профиль. Нажмите кнопку "Занять очередь", выберите удобное время и завершите процесс нажатием кнопки "Подтвердить очередь".</p>
+                                        <img src="/images/queue_taking/15_About doctor.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_taking/16_Booking_show.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_taking/16_Booking_info_pop_up.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'Как узнать, что очередь забронирована?', 
+                                    a: `
+                                        <p class="mb-3">После подтверждения очереди на экране появится уведомление "Успешно забронировано". Также вы можете в любое время просмотреть и отследить информацию обо всех своих активных очередях в разделе "Мои очереди".</p>
+                                        <img src="/images/queue_check/11-rasm.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_check/39_Bandliklarim_faol.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_check/39_Bandliklarim_details.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                },
+                    
+                                { 
+                                    q: 'Как отменить очередь, если я не могу прийти?', 
+                                    a: `
+                                        <p class="mb-3">Перейдите в раздел "Мои очереди" и выберите очередь, которую хотите отменить. Нажмите кнопку "Отменить" и подтвердите действие. Помните, что у каждого специалиста могут быть свои правила отмены и временные ограничения.</p>
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_details.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_details_cancel.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/queue_cancel_client/39_Bandliklarim_Bekor_qilingan.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    ` 
+                                }
+                            ]},
+                    
+                            //Специалист
+                            { id: 'specialist', title: 'Для специалистов', items: [
+                                { q: 'Кто такие специалисты в приложении?', a: 'Специалисты — это пользователи, которые оказывают услуги в рамках своей профессиональной деятельности и принимают клиентов через приложение.' },
+                                { 
+                                    q: 'Как заполнить профиль?', 
+                                    a: `
+                                        <p class="mb-3">Перейдите в пункт "Личные данные" раздела "Профиль". Введите всю необходимую информацию в подразделы "Основное" и "Деятельность", после чего нажмите кнопку "Сохранить". Помните, чем полнее и точнее ваш профиль, тем выше будет доверие клиентов к вам.</p>
+                                        <img src="/images/specialist_profil_fill/prfil_asosiy.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_profil_fill/profil_work.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                
+                                { 
+                                    q: 'Как установить дни приема?', 
+                                    a: `
+                                        <p class="mb-3">Настройка дней приема специалиста бывает двух видов: постоянный график и отдельные дни. Ниже объясняется настройка постоянного графика:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>Зайдите в пункт "Дни приема" в разделе "Профиль".</li>
+                                            <li>Выберите день недели и перейдите в окно настроек.</li>
+                                            <li>Укажите, является ли это рабочим днем или выходным.</li> 
+                                            <li>Если вы выбираете выходной, нажмите кнопку "Ввести" внизу. На этом настройка для данного дня недели завершена.</li>
+                                            <li>Если выбираете рабочий день, укажите время работы, максимальное количество приемов и среднее время приема одного клиента. В конце сохраните, нажав "Ввести".</li>
+                                        </ol>
+                                        <!-- Блок предупреждения -->
+                                        <div class="my-6 p-5 bg-blue-50 border-l-4 border-blue-600 rounded-r-2xl">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 text-blue-600 mr-4">
+                                                    <i class="fas fa-exclamation-circle text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-blue-900 font-bold mb-1 italic">Важное примечание</h4>
+                                                    <p class="text-blue-800 text-sm leading-relaxed">
+                                                        При внесении изменений в дни, на которые уже есть записи, вся ответственность ложится на специалиста. 
+                                                        В этом случае система отменит очереди на то время, которое не попадает в новый график. 
+                                                        Если рабочий день полностью меняется на выходной, все очереди на этот день будут отменены. 
+                                                        Поэтому просим специалистов проявлять осторожность при выполнении этого действия.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/images/working_days/weeks.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/working_days/off_day.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/working_days/work_day.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Как установить рабочий день, отличный от постоянного графика (исключение)?', 
+                                    a: `
+                                        <p class="mb-3">Можно настроить конкретный день как исключение, не нарушая постоянный график. Это помогает управлять потоком клиентов при необходимости. Для этого выполните следующие действия:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>В окне "Дни приема" перейдите в раздел "Отдельные дни".</li>
+                                            <li>Выберите нужную дату.</li>
+                                            <li>Укажите, рабочий это день или выходной.</li> 
+                                            <li>При выборе рабочего дня укажите время работы, максимум приемов и среднее время обслуживания.</li>
+                                            <li>Нажмите кнопку "Добавить". Это сохранит исключительный график для данной даты.</li>
+                                            <li>В завершение сохраните изменения кнопкой "Ввести".</li>
+                                        </ol>
+                                        <p class="mb-3">Система применит ваши настройки вместо постоянного графика для этой даты. Например: обычно каждый четверг — рабочий день. В следующий четверг вы не сможете работать по необходимости. Указав этот день как отдельный (выходной), вы предотвратите запись клиентов на этот день.</p>
+                                         <!-- Блок предупреждения -->
+                                        <div class="my-6 p-5 bg-blue-50 border-l-4 border-blue-600 rounded-r-2xl">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 text-blue-600 mr-4">
+                                                    <i class="fas fa-exclamation-circle text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-blue-900 font-bold mb-1 italic">Важное примечание</h4>
+                                                    <p class="text-blue-800 text-sm leading-relaxed">
+                                                        При изменении дней с существующими записями ответственность несет специалист. 
+                                                        Система отменит записи на время, не вошедшее в новый график. 
+                                                        Если день становится полностью выходным, все записи на него аннулируются.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/images/exceptional_days/main.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/exceptional_days/work_day.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/exceptional_days/off_day.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Где я могу отслеживать очереди записавшихся ко мне клиентов?', 
+                                    a: `
+                                        <p class="mb-3">Вы можете отслеживать записи двумя способами:</p>
+                                         <ol class="list-decimal ml-5 mb-3">
+                                            <li>В окне "Главная" через информацию об очередях на сегодня и ближайшие дни.</li>
+                                            <li>В разделе "Рабочий день" через данные о записях на текущий и последующие дни.</li>
+                                            <li>В обоих случаях доступен просмотр подробной информации о клиентах, занявших очередь.</li> 
+                                        </ol>
+                                        <img src="/images/specialist_queues/04. Main -_ Variant 1.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/specialist_queues/01. Ish kuni -_ Main.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Что такое Портфолио?', 
+                                    a: `
+                                        <p class="mb-3">Портфолио — это медиагалерея, в которой собраны примеры ваших работ. 
+                                        Загруженные вами фото и видеоматериалы будут видны всем пользователям, посетившим ваш профиль. 
+                                        Преимущество портфолио в том, что через него вы можете продемонстрировать свое мастерство, 
+                                        рекламировать услуги и, самое главное, привлекать поток новых клиентов.</p>
+                                        <img src="/images/portfolio/24_Portfolio_empty.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/portfolio/24_Portfolio_galery.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
+                                { 
+                                    q: 'Что означает блокировка портфолио и что нужно сделать, чтобы его открыть?', 
+                                    a: `
+                                        <p class="mb-3">Блокировка портфолио означает, что из-за окончания срока подписки ваши примеры работ временно не видны пользователям. 
+                                        Для его повторной активации нажмите кнопку "Открыть портфолио" и оплатите ежемесячную подписку. 
+                                        После этого вы сможете продолжить пользоваться услугой без ограничений.</p>
+                                        <img src="/images/portfolio_locked/22_Profil_disable_obuna.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                        <img src="/images/portfolio_locked/22_obuna_success.jpg" alt="Инструкция" class="faq-image rounded-2xl border border-gray-100 shadow-sm mt-4">
+                                    `
+                                },
                             ]}
                         ]
                     },
