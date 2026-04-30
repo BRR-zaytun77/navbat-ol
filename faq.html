@@ -110,30 +110,29 @@
 
     <!-- <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-12" x-data="{ activeSection: 'general' }"> -->
     <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-12" 
-      x-data="{ activeSection: 'general' }"
-      x-init="
-        // Faqat desktop (768px dan katta) ekranlar uchun kuzatuvchini yoqamiz
-        if (window.innerWidth >= 768) {
+      x-data="{ 
+        activeSection: 'general',
+        initScrollObserver() {
+            if (window.innerWidth < 768) return;
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    // Seksiyaning katta qismi ko'ringanda aktiv qilish
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
-                        activeSection = entry.target.id;
+                    if (entry.isIntersecting) {
+                        this.activeSection = entry.target.id;
                     }
                 });
             }, { 
-                threshold: [0.3, 0.5], // Bir nechta chegara qiymatlari aniqlikni oshiradi
-                rootMargin: '-10% 0px -40% 0px' // Header va pastki qism masofasini hisobga olish
+                // Ekranning yuqori qismidan 25% pastda bo'lganda aktiv qiladi
+                rootMargin: '-25% 0px -70% 0px',
+                threshold: 0
             });
 
-            // Seksiyalarni kuzatishni boshlash
-            $nextTick(() => {
-                document.querySelectorAll('section[id]').forEach((section) => {
-                    observer.observe(section);
-                });
+            document.querySelectorAll('section[id]').forEach((section) => {
+                observer.observe(section);
             });
         }
-      ">
+      }"
+      x-init="setTimeout(() => initScrollObserver(), 500)">
         
         <aside class="w-full md:w-72 flex-shrink-0">
             <div class="sticky top-32 space-y-2">
