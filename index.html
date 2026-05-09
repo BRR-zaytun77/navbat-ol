@@ -28,6 +28,8 @@
         .nav-blur { background: rgba(255, 255, 255, 0.75); backdrop-filter: saturate(180%) blur(20px); }
         .btn-apple { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
         .btn-apple:hover { transform: scale(1.02); }
+        .text-brand-green { color: #2E7D32 !important; }
+        .bg-brand-green { background-color: #2E7D32 !important; }
     </style>
 
     <script type="application/ld+json">
@@ -86,14 +88,14 @@
             
             <div class="hidden md:flex flex-1 justify-center px-4">
                 <div class="flex space-x-6 lg:space-x-10 text-[13px] font-medium text-gray-600 uppercase tracking-wide">
-                    <a href="index.html#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
+                    <a href="index.html#features" class="hover:text-brand-green transition" x-text="t[lang].menuFeatures"></a>
                     <a href="about.html" 
-                       :class="window.location.pathname.includes('about.html') ? 'text-blue-600 font-bold border-b-2 border-blue-600' : ''" 
-                       class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
-                    <a href="faq.html" class="hover:text-blue-600 transition">FAQ</a>
-                    <a href="terms.html" class="hover:text-blue-600 transition" x-text="t[lang].menuTerms"></a>
-                    <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
-                    <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="hover:text-blue-600 transition" x-text="t[lang].contactTitle || 'Bog\'lanish'"></a>
+                       :class="window.location.pathname.includes('about.html') ? 'text-brand-green font-bold border-b-2 border-blue-600' : ''" 
+                       class="hover:text-brand-green transition" x-text="t[lang].menuAbout"></a>
+                    <a href="faq.html" class="hover:text-brand-green transition">FAQ</a>
+                    <a href="terms.html" class="hover:text-brand-green transition" x-text="t[lang].menuTerms"></a>
+                    <a href="privacy.html" class="hover:text-brand-green transition" x-text="t[lang].menuPrivacy"></a>
+                    <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="hover:text-brand-green transition" x-text="t[lang].contactTitle || 'Bog\'lanish'"></a>
                 </div>
             </div>
 
@@ -112,7 +114,7 @@
                     <span x-text="t[lang].downloadBtn || 'Yuklab olish'"></span>
                 </a>
 
-                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-gray-600 hover:text-blue-600 focus:outline-none transition">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-gray-600 hover:text-brand-green focus:outline-none transition">
                     <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -131,12 +133,12 @@
          class="md:hidden bg-white border-b border-gray-100 shadow-xl absolute w-full left-0 z-40" 
          x-cloak @click.away="mobileMenuOpen = false">
         <div class="px-6 py-8 space-y-6">
-            <a href="index.html#features" @click="mobileMenuOpen = false" class="block text-lg font-medium text-gray-800 hover:text-blue-600" x-text="t[lang].menuFeatures"></a>
-            <a href="about.html" class="block text-lg font-medium text-gray-800 hover:text-blue-600" x-text="t[lang].menuAbout"></a>
-            <a href="faq.html" class="block text-lg font-medium text-gray-800 hover:text-blue-600">FAQ</a>
-            <a href="terms.html" class="block text-lg font-medium text-gray-800 hover:text-blue-600" x-text="t[lang].menuTerms"></a>
-            <a href="privacy.html" class="block text-lg font-medium text-gray-800 hover:text-blue-600" x-text="t[lang].menuPrivacy"></a>
-            <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="flex items-center space-x-3 text-lg font-medium text-blue-600 pt-2 border-t border-gray-100">
+            <a href="index.html#features" @click="mobileMenuOpen = false" class="block text-lg font-medium text-gray-800 hover:text-brand-green" x-text="t[lang].menuFeatures"></a>
+            <a href="about.html" class="block text-lg font-medium text-gray-800 hover:text-brand-green" x-text="t[lang].menuAbout"></a>
+            <a href="faq.html" class="block text-lg font-medium text-gray-800 hover:text-brand-green">FAQ</a>
+            <a href="terms.html" class="block text-lg font-medium text-gray-800 hover:text-brand-green" x-text="t[lang].menuTerms"></a>
+            <a href="privacy.html" class="block text-lg font-medium text-gray-800 hover:text-brand-green" x-text="t[lang].menuPrivacy"></a>
+            <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="flex items-center space-x-3 text-lg font-medium text-brand-green pt-2 border-t border-gray-100">
             <i class="fab fa-telegram-plane"></i>
             <span x-text="t[lang].contactTitle || 'Bog\'lanish'"></span>
             </a>
@@ -173,7 +175,7 @@
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
             <template x-for="feature in t[lang].features">
                 <div class="p-10 rounded-[2.5rem] bg-gray-50 hover:bg-white hover:shadow-2xl hover:shadow-gray-200 transition-all duration-500 border border-transparent hover:border-gray-100">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-blue-600 text-2xl">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-brand-green text-2xl">
                         <i :class="feature.icon"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 tracking-tight" x-text="feature.title"></h3>
@@ -200,10 +202,10 @@
             <div class="mb-8 flex justify-center space-x-6 text-[12px] font-medium uppercase tracking-widest text-gray-500">
                 
                 <a href="about.html" x-text="t[lang].menuAbout"></a>
-                <a href="faq.html" class="text-blue-600">FAQ</a>
+                <a href="faq.html" class="text-brand-green">FAQ</a>
                 <a href="terms.html" x-text="t[lang].menuTerms"></a>
                 <a href="privacy.html" x-text="t[lang].menuPrivacy"></a>
-                <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="hover:text-blue-600 transition" x-text="t[lang].contactTitle || 'Bog\'lanish'"></a>
+                <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="hover:text-brand-green transition" x-text="t[lang].contactTitle || 'Bog\'lanish'"></a>
                 
             </div>
             <p class="mb-2 text-sm" x-text="t[lang].copyright"></p>
