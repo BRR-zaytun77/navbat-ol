@@ -219,12 +219,13 @@
                 // Brauzer tilini tekshirish (masalan: 'ru-RU', 'uz-UZ')
                 const browserLang = navigator.language || navigator.userLanguage;
                 
-                // Agar brauzer tili ruscha bo'lsa, yoshi kattalar deb taxmin qilib Kirillni beramiz
-                if (browserLang.startsWith('ru')) {
-                    selectedLang = 'uz_cyr';
-                } else {
-                    selectedLang = 'uz'; // Qolgan holatlarda Lotin
-                }
+                // // Agar brauzer tili ruscha bo'lsa, yoshi kattalar deb taxmin qilib Kirillni beramiz
+                // if (browserLang.startsWith('ru')) {
+                //     selectedLang = 'uz_cyr';
+                // } else {
+                //     selectedLang = 'uz'; // Qolgan holatlarda Lotin
+                // }
+                selectedLang = 'uz';
                 localStorage.setItem('navbat_ol_user_lang', selectedLang);
             }
             return {
