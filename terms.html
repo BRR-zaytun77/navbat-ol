@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
@@ -225,4 +225,208 @@
         }
     </script>
 </body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Navbat-Ol | Foydalanish shartlari — Terms & Conditions</title>
+    <meta name="description" content="Navbat-Ol platformasidan foydalanish shartlari va qoidalari. Tiyn Zaytun LLC tomonidan taqdim etilgan xizmatlar haqida to'liq ma'lumot.">
+    <meta name="author" content="Tiyn Zaytun LLC">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .apple-gradient { background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%); }
+        .nav-blur { background: rgba(255, 255, 255, 0.75); backdrop-filter: saturate(180%) blur(20px); }
+        .legal-card { background: white; border-radius: 2rem; border: 1px solid #f1f1f1; padding: 2.5rem; transition: transform 0.2s ease; }
+        .legal-card:hover { border-color: #3b82f6; }
+        .definition-item { border-left: 3px solid #3b82f6; padding-left: 1rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="apple-gradient text-gray-900" x-data="localizer()" x-init="init()">
+
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-200" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+                        <img src="/images/logo.png" alt="Navbat-Ol Logo" class="h-8 w-auto md:h-10">
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex flex-1 justify-center px-4">
+                    <div class="flex space-x-6 lg:space-x-10 text-[13px] font-medium text-gray-600 uppercase tracking-wide">
+                        <a href="index.html#features" class="hover:text-blue-600 transition" x-text="t[lang].menuFeatures"></a>
+                        <a href="about.html" class="hover:text-blue-600 transition" x-text="t[lang].menuAbout"></a>
+                        <a href="faq.html" class="hover:text-blue-600 transition">FAQ</a>
+                        <a href="terms.html" class="text-blue-600 font-bold border-b-2 border-blue-600" x-text="t[lang].menuTerms"></a>
+                        <a href="privacy.html" class="hover:text-blue-600 transition" x-text="t[lang].menuPrivacy"></a>
+                        <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="hover:text-blue-600 transition" x-text="t[lang].contactTitle"></a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <select x-model="lang" class="bg-transparent border-none text-[12px] md:text-[13px] font-bold focus:ring-0 cursor-pointer text-gray-700 py-1 pl-2 pr-6">
+                        <option value="uz">O'zbek</option>
+                        <option value="uz_cyr">Ўзбек</option>
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                    <a href="index.html#download" class="hidden sm:block bg-blue-600 text-white px-5 py-2 rounded-full text-[12px] font-semibold hover:bg-blue-700 transition">
+                        <span x-text="t[lang].downloadBtn"></span>
+                    </a>
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-gray-600">
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             class="md:hidden bg-white border-b border-gray-100 shadow-xl absolute w-full left-0 z-40" 
+             x-cloak @click.away="mobileMenuOpen = false">
+            <div class="px-6 py-8 space-y-6">
+                <a href="index.html#features" @click="mobileMenuOpen = false" class="block text-lg font-medium text-gray-800 hover:text-blue-600" x-text="t[lang].menuFeatures"></a>
+                <a href="about.html" class="block text-lg font-medium text-gray-800 hover:text-blue-600" x-text="t[lang].menuAbout"></a>
+                <a href="faq.html" class="block text-lg font-medium text-gray-800 hover:text-blue-600">FAQ</a>
+                <a href="terms.html" class="block text-lg font-medium text-gray-800 hover:text-blue-600" x-text="t[lang].menuTerms"></a>
+                <a href="privacy.html" class="block text-lg font-medium text-gray-800 hover:text-blue-600" x-text="t[lang].menuPrivacy"></a>
+                <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="flex items-center space-x-3 text-lg font-medium text-blue-600 pt-2 border-t border-gray-100">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span x-text="t[lang].contactTitle"></span>
+                </a>
+                <a href="index.html#download" class="block w-full text-center bg-blue-600 text-white py-3 rounded-xl font-bold" x-text="t[lang].downloadBtn"></a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-40 pb-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center md:text-left">
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-4" x-text="t[lang].termsTitle"></h1>
+            <p class="text-gray-500 font-light text-lg" x-text="t[lang].termsUpdate"></p>
+        </div>
+    </header>
+
+    <main class="py-12 px-6">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <template x-for="(section, index) in t[lang].legalContent" :key="index">
+                <div class="legal-card">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                        <span class="w-8 h-8 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mr-4 text-sm font-bold" x-text="index + 1"></span>
+                        <span x-text="section.title"></span>
+                    </h2>
+                    <div class="text-gray-600 leading-relaxed space-y-4 text-[17px] font-light" x-html="section.body"></div>
+                </div>
+            </template>
+
+            <div class="legal-card bg-gray-50 border-dashed border-2 border-gray-200">
+                <h2 class="text-xl font-bold mb-6 text-gray-800" x-text="t[lang].rekvizitTitle"></h2>
+                <div class="grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <p class="text-gray-500 uppercase tracking-widest text-[10px] font-bold mb-1" x-text="t[lang].rekvizitName"></p>
+                        <p class="font-semibold text-gray-800">"Tiyn Zaytun" MChJ</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 uppercase tracking-widest text-[10px] font-bold mb-1">STIR (INN)</p>
+                        <p class="font-semibold text-gray-800">[Sizning raqamingiz]</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <p class="text-gray-500 uppercase tracking-widest text-[10px] font-bold mb-1" x-text="t[lang].rekvizitAddress"></p>
+                        <p class="font-semibold text-gray-800">[Yuridik manzil]</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 uppercase tracking-widest text-[10px] font-bold mb-1">Email</p>
+                        <p class="font-semibold text-blue-600">[Rasmiy pochta]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-16 text-center text-gray-400 border-t border-gray-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-8 flex justify-center space-x-6 text-[12px] font-medium uppercase tracking-widest text-gray-500">
+                <a href="about.html" class="hover:text-blue-600" x-text="t[lang].menuAbout"></a>
+                <a href="faq.html" class="hover:text-blue-600">FAQ</a>
+                <a href="terms.html" class="text-blue-600" x-text="t[lang].menuTerms"></a>
+                <a href="privacy.html" class="hover:text-blue-600" x-text="t[lang].menuPrivacy"></a>
+                <a href="https://t.me/navbat_ol_support_bot" target="_blank" class="hover:text-blue-600 transition" x-text="t[lang].contactTitle"></a>
+            </div>
+            <p class="mb-2 text-sm" x-text="t[lang].copyright"></p>
+            <p class="text-xs max-w-lg mx-auto leading-relaxed" x-text="t[lang].footerNote"></p>
+        </div>
+    </footer>
+
+    <script>
+        function localizer() {
+            let selectedLang = localStorage.getItem('navbat_ol_user_lang') || 'uz';
+            return {
+                lang: selectedLang,
+                init() {
+                    this.$watch('lang', (val) => {
+                        localStorage.setItem('navbat_ol_user_lang', val);
+                    });
+                },
+                t: {
+                    uz: {
+                        contactTitle: 'Bog\'lanish',
+                        menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik',
+                        downloadBtn: 'Yuklab olish', termsTitle: 'Ommaviy Oferta (Foydalanish shartlari)', termsUpdate: 'Nashr etilgan sana: 15-may, 2026-yil',
+                        rekvizitTitle: 'Yuridik shaxs rekvizitlari', rekvizitName: 'Nomi', rekvizitAddress: 'Manzil',
+                        copyright: '© 2026 Tiyn Zaytun MCHJ. Barcha huquqlar himoyalangan.',
+                        footerNote: 'Ushbu loyiha Tiyn Zaytun tomonidan jamiyat baxti va samaradorligi uchun ishlab chiqilgan.',
+                        legalContent: [
+                            { title: 'Atamalar va ta’riflar', body: '<div class="definition-item"><strong>Platforma</strong> — "Navbat-Ol" mobil ilovasi (iOS va Android) hamda navbat-ol.uz veb-sayti.</div><div class="definition-item"><strong>Kompaniya</strong> — "Tiyn Zaytun" Mas’uliyati Cheklangan Jamiyati.</div><div class="definition-item"><strong>Foydalanuvchi</strong> — Platformada ro‘yxatdan o‘tgan jismoniy yoki yuridik shaxs (Mijoz yoki Mutaxassis).</div><div class="definition-item"><strong>Xizmat ko‘rsatuvchi (Mutaxassis)</strong> — Platforma orqali o‘z xizmatlarini taklif qiluvchi shaxs.</div><div class="definition-item"><strong>Mijoz</strong> — Mutaxassis xizmatidan foydalanish maqsadida navbat sotib oluvchi va navbatga yoziluvchi shaxs.</div>' },
+                            { title: 'Shartnomaning predmeti va aksepti', body: '<p>2.1. Ushbu Shartnoma Platformadan foydalanish tartibini belgilaydi.</p><p>2.2. Foydalanuvchi Platformada ro‘yxatdan o‘tgan yoki xizmatlardan foydalangan lahzadan boshlab ushbu Oferta shartlarini to‘liq va so‘zsiz qabul qilgan (aksept) hisoblanadi.</p><p>2.3. Agar Foydalanuvchi Shartnomaning biron-bir bandiga rozi bo‘lmasa, u Platformadan foydalanishni darhol to‘xtatishi shart.</p>' },
+                            { title: 'Kompaniyaning huquqlari va majburiyatlari', body: '<p>3.1. <strong>O‘zgartirishlar kiritish:</strong> Kompaniya ixtiyoriy vaqtda Platforma interfeysi, tariflar va ushbu Oferta matniga o‘zgartirish kiritish huquqiga ega.</p><p>3.2. <strong>Xizmatni to‘xtatish:</strong> Profilaktika ishlari yoki Shartnoma buzilgan taqdirda xizmat ko‘rsatishni cheklash huquqi saqlanib qoladi.</p><p>3.3. <strong>Ma’lumotlarni boshqarish:</strong> Kompaniya xizmat sifatini oshirish maqsadida foydalanuvchi ma’lumotlarini tahlil qilish huquqiga ega.</p>' },
+                            { title: 'To‘lovlar va Pul mablag‘larini qaytarish (Refund)', body: '<p>4.1. <strong>Sinov muddati (Trial):</strong> Foydalanuvchiga platformani o‘rganish uchun bepul sinov muddati taqdim etiladi.</p><p>4.2. <strong>To‘lovning ixtiyoriyligi:</strong> To‘lovni amalga oshirish orqali Foydalanuvchi xizmat sifatiga e’tirozi yo‘qligini tasdiqlaydi.</p><p>4.3. <strong>Qaytarilmaslik qoidasi:</strong> To‘langan mablag‘lar (obunalar, navbatlar) raqamli xizmat tabiati sababli qaytarib berilmaydi.</p>' },
+                            { title: 'Javobgarlikning cheklanishi', body: '<p>5.1. <strong>Vositachilik maqomi:</strong> Kompaniya faqat texnologik platformani taqdim etadi va Mutaxassis xizmati sifati uchun javobgar emas.</p><p>5.2. <strong>Zararlar:</strong> Internet nosozliklari, parollarning uchinchi shaxslarga berilishi yoki foydalanuvchilar o‘rtasidagi nizolar uchun Kompaniya javobgarlikni zimmasiga olmaydi.</p>' },
+                            { title: 'Ahloqiy va ma’muriy majburiyatlar', body: '<p>6.1. Platformadan faqat qonuniy maqsadlarda foydalanish shart.</p><p>6.2. Yolg‘on ma’lumot tarqatish, haqoratli harakatlar yoki tizim ishiga sun’iy xalaqit berish qat’iyan man etiladi.</p>' },
+                            { title: 'Yakuniy qoidalar', body: '<p>7.1. Ushbu Shartnoma O‘zbekiston Respublikasining amaldagi qonunchiligi asosida tartibga solinadi.</p><p>7.2. Yangi tahrir e’lon qilingan paytdan boshlab kuchga kiradi.</p>' }
+                        ]
+                    },
+                    ru: {
+                        contactTitle: 'Связаться',
+                        menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Конфиденциальность',
+                        downloadBtn: 'Скачать', termsTitle: 'Публичная оферта (Условия использования)', termsUpdate: 'Дата публикации: 15 мая 2026 г.',
+                        rekvizitTitle: 'Реквизиты юридического лица', rekvizitName: 'Наименование', rekvizitAddress: 'Адрес',
+                        copyright: '© 2026 ООО Tiyn Zaytun. Все права защищены.',
+                        footerNote: 'Этот проект разработан Tiyn Zaytun для благополучия и эффективности общества.',
+                        legalContent: [
+                            { title: 'Термины и определения', body: '<p><strong>Платформа</strong> — мобильное приложение "Navbat-Ol" и веб-сайт navbat-ol.uz.</p><p><strong>Компания</strong> — ООО "Tiyn Zaytun".</p>' },
+                            { title: 'Предмет договора', body: '<p>Использование Платформы означает полное принятие условий данной Оферты.</p>' }
+                        ]
+                    }
+                    // Boshqa tillar (uz_cyr, en, ar) uchun ham legalContent qismini shunday formatda to'ldirish mumkin.
+                }
+            }
+        }
+    </script>
+</body>
 </html>
+
+
+
+
