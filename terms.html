@@ -228,9 +228,6 @@
 </html> -->
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -255,9 +252,9 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .apple-gradient { background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%); }
         .nav-blur { background: rgba(255, 255, 255, 0.75); backdrop-filter: saturate(180%) blur(20px); }
-        .legal-card { background: white; border-radius: 2rem; border: 1px solid #f1f1f1; padding: 2.5rem; transition: transform 0.2s ease; }
-        .legal-card:hover { border-color: #3b82f6; }
+        .legal-card { background: white; border-radius: 2rem; border: 1px solid #f1f1f1; padding: 2.5rem; }
         .definition-item { border-left: 3px solid #3b82f6; padding-left: 1rem; margin-bottom: 1rem; }
+        [x-cloak] { display: none !important; }
     </style>
 </head>
 <body class="apple-gradient text-gray-900" x-data="localizer()" x-init="init()">
@@ -324,7 +321,7 @@
 
     <header class="pt-40 pb-16 px-6 bg-white">
         <div class="max-w-4xl mx-auto text-center md:text-left">
-            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-4" x-text="t[lang].termsTitle"></h1>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4" x-text="t[lang].termsTitle"></h1>
             <p class="text-gray-500 font-light text-lg" x-text="t[lang].termsUpdate"></p>
         </div>
     </header>
@@ -337,7 +334,7 @@
                         <span class="w-8 h-8 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mr-4 text-sm font-bold" x-text="index + 1"></span>
                         <span x-text="section.title"></span>
                     </h2>
-                    <div class="text-gray-600 leading-relaxed space-y-4 text-[17px] font-light" x-html="section.body"></div>
+                    <div class="text-gray-600 leading-relaxed space-y-4 text-lg font-light" x-html="section.body"></div>
                 </div>
             </template>
 
@@ -393,40 +390,48 @@
                     uz: {
                         contactTitle: 'Bog\'lanish',
                         menuFeatures: 'Imkoniyatlar', menuAbout: 'Loyiha haqida', menuTerms: 'Shartlar', menuPrivacy: 'Maxfiylik',
-                        downloadBtn: 'Yuklab olish', termsTitle: 'Ommaviy Oferta (Foydalanish shartlari)', termsUpdate: 'Nashr etilgan sana: 15-may, 2026-yil',
+                        downloadBtn: 'Yuklab olish',
+                        termsTitle: 'Ommaviy Oferta', 
+                        termsUpdate: 'Nashr etilgan sana: 15-may, 2026-yil',
                         rekvizitTitle: 'Yuridik shaxs rekvizitlari', rekvizitName: 'Nomi', rekvizitAddress: 'Manzil',
                         copyright: '© 2026 Tiyn Zaytun MCHJ. Barcha huquqlar himoyalangan.',
                         footerNote: 'Ushbu loyiha Tiyn Zaytun tomonidan jamiyat baxti va samaradorligi uchun ishlab chiqilgan.',
                         legalContent: [
-                            { title: 'Atamalar va ta’riflar', body: '<div class="definition-item"><strong>Platforma</strong> — "Navbat-Ol" mobil ilovasi (iOS va Android) hamda navbat-ol.uz veb-sayti.</div><div class="definition-item"><strong>Kompaniya</strong> — "Tiyn Zaytun" Mas’uliyati Cheklangan Jamiyati.</div><div class="definition-item"><strong>Foydalanuvchi</strong> — Platformada ro‘yxatdan o‘tgan jismoniy yoki yuridik shaxs (Mijoz yoki Mutaxassis).</div><div class="definition-item"><strong>Xizmat ko‘rsatuvchi (Mutaxassis)</strong> — Platforma orqali o‘z xizmatlarini taklif qiluvchi shaxs.</div><div class="definition-item"><strong>Mijoz</strong> — Mutaxassis xizmatidan foydalanish maqsadida navbat sotib oluvchi va navbatga yoziluvchi shaxs.</div>' },
-                            { title: 'Shartnomaning predmeti va aksepti', body: '<p>2.1. Ushbu Shartnoma Platformadan foydalanish tartibini belgilaydi.</p><p>2.2. Foydalanuvchi Platformada ro‘yxatdan o‘tgan yoki xizmatlardan foydalangan lahzadan boshlab ushbu Oferta shartlarini to‘liq va so‘zsiz qabul qilgan (aksept) hisoblanadi.</p><p>2.3. Agar Foydalanuvchi Shartnomaning biron-bir bandiga rozi bo‘lmasa, u Platformadan foydalanishni darhol to‘xtatishi shart.</p>' },
-                            { title: 'Kompaniyaning huquqlari va majburiyatlari', body: '<p>3.1. <strong>O‘zgartirishlar kiritish:</strong> Kompaniya ixtiyoriy vaqtda Platforma interfeysi, tariflar va ushbu Oferta matniga o‘zgartirish kiritish huquqiga ega.</p><p>3.2. <strong>Xizmatni to‘xtatish:</strong> Profilaktika ishlari yoki Shartnoma buzilgan taqdirda xizmat ko‘rsatishni cheklash huquqi saqlanib qoladi.</p><p>3.3. <strong>Ma’lumotlarni boshqarish:</strong> Kompaniya xizmat sifatini oshirish maqsadida foydalanuvchi ma’lumotlarini tahlil qilish huquqiga ega.</p>' },
-                            { title: 'To‘lovlar va Pul mablag‘larini qaytarish (Refund)', body: '<p>4.1. <strong>Sinov muddati (Trial):</strong> Foydalanuvchiga platformani o‘rganish uchun bepul sinov muddati taqdim etiladi.</p><p>4.2. <strong>To‘lovning ixtiyoriyligi:</strong> To‘lovni amalga oshirish orqali Foydalanuvchi xizmat sifatiga e’tirozi yo‘qligini tasdiqlaydi.</p><p>4.3. <strong>Qaytarilmaslik qoidasi:</strong> To‘langan mablag‘lar (obunalar, navbatlar) raqamli xizmat tabiati sababli qaytarib berilmaydi.</p>' },
-                            { title: 'Javobgarlikning cheklanishi', body: '<p>5.1. <strong>Vositachilik maqomi:</strong> Kompaniya faqat texnologik platformani taqdim etadi va Mutaxassis xizmati sifati uchun javobgar emas.</p><p>5.2. <strong>Zararlar:</strong> Internet nosozliklari, parollarning uchinchi shaxslarga berilishi yoki foydalanuvchilar o‘rtasidagi nizolar uchun Kompaniya javobgarlikni zimmasiga olmaydi.</p>' },
-                            { title: 'Ahloqiy va ma’muriy majburiyatlar', body: '<p>6.1. Platformadan faqat qonuniy maqsadlarda foydalanish shart.</p><p>6.2. Yolg‘on ma’lumot tarqatish, haqoratli harakatlar yoki tizim ishiga sun’iy xalaqit berish qat’iyan man etiladi.</p>' },
-                            { title: 'Yakuniy qoidalar', body: '<p>7.1. Ushbu Shartnoma O‘zbekiston Respublikasining amaldagi qonunchiligi asosida tartibga solinadi.</p><p>7.2. Yangi tahrir e’lon qilingan paytdan boshlab kuchga kiradi.</p>' }
+                            { 
+                                title: 'Atamalar va ta’riflar', 
+                                body: '<div class="definition-item"><strong>Platforma</strong> — "Navbat-Ol" mobil ilovasi va veb-sayti.</div><div class="definition-item"><strong>Kompaniya</strong> — "Tiyn Zaytun" MChJ.</div><div class="definition-item"><strong>Foydalanuvchi</strong> — Platformada ro‘yxatdan o‘tgan jismoniy yoki yuridik shaxs (Mijoz yoki Mutaxassis).</div><div class="definition-item"><strong>Xizmat ko‘rsatuvchi (Mutaxassis)</strong> — Platforma orqali o‘z xizmatlarini taklif qiluvchi shaxs.</div><div class="definition-item"><strong>Mijoz</strong> — Mutaxassis xizmatidan foydalanish maqsadida navbat oluvchi shaxs.</div>' 
+                            },
+                            { 
+                                title: 'Shartnomaning predmeti va aksepti', 
+                                body: '<p>2.1. Ushbu Shartnoma Platformadan foydalanish tartibini belgilaydi.</p><p>2.2. Ro‘yxatdan o‘tish ushbu Oferta shartlarini to‘liq qabul qilish (aksept) hisoblanadi.</p><p>2.3. Rozilik bo‘lmagan taqdirda foydalanishni to‘xtatish shart.</p>' 
+                            },
+                            { 
+                                title: 'Kompaniyaning huquqlari', 
+                                body: '<p>3.1. <strong>O‘zgartirishlar kiritish:</strong> Kompaniya ixtiyoriy vaqtda va oldindan ogohlantirmasdan interfeys, tariflar va ushbu Oferta matnini o‘zgartirish huquqiga ega.</p><p>3.2. <strong>Xizmatni to‘xtatish:</strong> Texnik nosozliklar yoki shartlar buzilganda xizmatni cheklash huquqi saqlanadi.</p>' 
+                            },
+                            { 
+                                title: 'To‘lovlar va Refund siyosati', 
+                                body: '<p>4.1. <strong>Sinov muddati:</strong> Foydalanuvchiga tizimni o‘rganish uchun bepul Trial davri beriladi.</p><p>4.2. <strong>Qaytarilmaslik qoidasi:</strong> To‘langan mablag‘lar (obunalar, navbatlar) qaytarib berilmaydi, chunki to‘lov sinov muddatidan so‘ng ixtiyoriy amalga oshiriladi.</p>' 
+                            },
+                            { 
+                                title: 'Mas’uliyatni cheklash', 
+                                body: '<p>5.1. Kompaniya faqat texnologik vositachi bo‘lib, Mutaxassis ko‘rsatgan xizmat sifati uchun javobgar emas.</p><p>5.2. Internet aloqasi yoki uchinchi tomon nosozliklari uchun javobgarlik olinmaydi.</p>' 
+                            }
                         ]
                     },
+                    // Boshqa tillar (uz_cyr, ru, en, ar) uchun ham legalContent bloklarini uz tilidagi kabi formatda to'ldirish mumkin.
                     ru: {
                         contactTitle: 'Связаться',
                         menuFeatures: 'Возможности', menuAbout: 'О проекте', menuTerms: 'Условия', menuPrivacy: 'Конфиденциальность',
-                        downloadBtn: 'Скачать', termsTitle: 'Публичная оферта (Условия использования)', termsUpdate: 'Дата публикации: 15 мая 2026 г.',
-                        rekvizitTitle: 'Реквизиты юридического лица', rekvizitName: 'Наименование', rekvizitAddress: 'Адрес',
+                        downloadBtn: 'Скачать', termsTitle: 'Публичная оферта', termsUpdate: 'Дата публикации: 15 мая 2026 г.',
+                        rekvizitTitle: 'Реквизиты', rekvizitName: 'Наименование', rekvizitAddress: 'Адрес',
                         copyright: '© 2026 ООО Tiyn Zaytun. Все права защищены.',
                         footerNote: 'Этот проект разработан Tiyn Zaytun для благополучия и эффективности общества.',
-                        legalContent: [
-                            { title: 'Термины и определения', body: '<p><strong>Платформа</strong> — мобильное приложение "Navbat-Ol" и веб-сайт navbat-ol.uz.</p><p><strong>Компания</strong> — ООО "Tiyn Zaytun".</p>' },
-                            { title: 'Предмет договора', body: '<p>Использование Платформы означает полное принятие условий данной Оферты.</p>' }
-                        ]
+                        legalContent: [ { title: 'Общие положения', body: 'Использование Платформы означает принятие условий данной Оферты.' } ]
                     }
-                    // Boshqa tillar (uz_cyr, en, ar) uchun ham legalContent qismini shunday formatda to'ldirish mumkin.
                 }
             }
         }
     </script>
 </body>
 </html>
-
-
-
-
